@@ -190,11 +190,12 @@
                     <div class="row"> 
                       <div  class="pricing padding-20 padding-bottom-20" >
                         <h4>Pontos de Vida</h4>
-                        <p style="padding-top: 0px; ">Por nível: 1d8 + mod Con</p>
+                        <p style="padding-top: 0px; ">Por nível: 1d8 + mod Con • Total 60</p>
                         <div class=" exp-history"> 
                           <div class="exp">
                             <div class="media-body">
-                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span style="font-size: 80px;">60</span></a></h6>
+                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span  id="pv_atual" contenteditable="true" style="font-size: 80px;">60</span></a> <button onclick="resetPV()" style="border: none;">🔄</button></h6>
+                              
                               <div class="media-left"><span class="sun">Pontos de Vida Atual</span></div>
                               <div id="collapsePV" class="panel-collapse collapse row">
                                 <div class="col-sm-6">
@@ -209,7 +210,7 @@
                               </div>
                             </div>
                           </div>
-                          <div><span class="sun" style="width: 205px; font-size: 27px;">P.V Temporário: ○ - ○ - ○</span></div>
+                          <div><span id="pv_temp" contenteditable="true"  class="sun" style="width: 205px; font-size: 27px;">P.V Temporário: <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div>
                         </div>
                       </div>
                         <!-- Exp -->
@@ -952,7 +953,7 @@
                         <div id="collapse-2-1" class="panel-collapse collapse in">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="anotacoes" contenteditable="true"> 
                                 <b>•  ARMADURA E ARMAS</b><br>
                                 - Plate Armor (18 CA) - - - - - - - - - - Peso: 20 kg<br>
                                 <spam style="font-size: 8px;">Campo de Amortecimento sem desvantagem na furtividade</spam>
@@ -982,7 +983,7 @@
                           <div class="panel-body">
                             <div class="row">
                               
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="anotacoes" contenteditable="true"> 
                                  <b>Conjunto de Anotações sobre:<br>
                                     - Transmutação (Anotações de Zarasgorn);<br>
                                     -  Mapas extra-planar (Anotações da Fábrica com os Homens-lula);<br>
@@ -1013,7 +1014,7 @@
                         <div id="collapse-2-3" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="anotacoes" contenteditable="true"> 
                                 <b>- Vestimentas de Viajante;<br>
                                   - Capa de Viagem;<br>
                                   - P.O: 50;<br>
@@ -1350,6 +1351,36 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Begin Map Script--> 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 <script src="../js/vendors/map.js"></script>
+<script>
+function resetPV() {
+  const pv = document.getElementById("pv_atual");
+
+  pv.innerText = "60";
+  localStorage.setItem("pv_atual", "60");
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const campos = document.querySelectorAll("[contenteditable=true]");
+
+  campos.forEach(campo => {
+    const id = campo.id;
+
+    if (!id) return; // segurança
+
+    // carregar valor salvo
+    const salvo = localStorage.getItem(id);
+    if (salvo) {
+      campo.innerText = salvo;
+    }
+
+    // salvar ao editar
+    campo.addEventListener("input", () => {
+      localStorage.setItem(id, campo.innerText);
+    });
+  });
+});
+</script>
 </body>
 </html>
 
