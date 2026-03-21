@@ -192,7 +192,7 @@
                         <div class=" exp-history"> 
                           <div class="exp">
                             <div class="media-body">
-                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span style="font-size: 80px;">68</span></a></h6>
+                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span id="pv_atual" contenteditable="true" style="font-size: 80px;">68</span></a>  <button onclick="resetPV()" style="border: none;">🔄</button></h6>
                               <div class="media-left"><span class="sun">Pontos de Vida Atual</span></div>
                               <div id="collapsePV" class="panel-collapse collapse row">
                                 <div class="col-sm-6">
@@ -207,7 +207,7 @@
                               </div>
                             </div>
                           </div>
-                          <div><span class="sun" style="width: 205px; font-size: 27px;">P.V Temporário: ○ - ○ - ○</span></div>
+                          <div><span class="sun" style="width: 205px; font-size: 27px;">P.V Temporário: <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div>
                         </div>
                       </div>
                         <!-- Exp -->
@@ -831,7 +831,7 @@
                         <div id="collapse-2-1" class="panel-collapse collapse in">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="equipamentos" contenteditable="true"> 
                                 <b>•  ARMADURA E ARMAS</b><br>
                                 - Armadura de Couro Batido (+1 CA) - - - - - - - - - - Peso: 6,5 kg<br>
                                 <!-- <spam style="font-size: 8px;">Campo de Amortecimento se, desvantagem na furtividade</spam> -->
@@ -858,7 +858,7 @@
                           <div class="panel-body">
                             <div class="row">
                               
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="recompensas" contenteditable="true"> 
                                  <b>Mochila de Explorador:<br>
                                     - Um instrumento musical;<br>
                                     - Armadilha de caçado;<br>
@@ -883,7 +883,7 @@
                         <div id="collapse-2-3" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="dinheiro" contenteditable="true"> 
                                 <b>
                                   - Uma Bússola;
                                   - Capa de Viagem;<br>
@@ -934,6 +934,9 @@
                         <h5 class="margin-top-30 margin-bottom-0">Nas Terras de Amastácia</h5>
                         <div class="col-md-12"><img class="img-responsive margin-top-10" src="enoahim-contra-dragao.jpg" title="Mapa de Amastacia - Luan" alt="Mapa de Amastacia - Luan"></div>
                         <div class="col-md-12"><img class="img-responsive margin-top-10" src="mapa-de-amastacia.jpg" title="Mapa de Amastacia - Luan" alt="Mapa de Amastacia - Luan"></div>
+                         <br><br>
+                      <h6 class="margin-top-30 margin-bottom-0">Anotações Importantes</h6>
+                      <p id="anotacao" contenteditable="true">• No atual momento ... </p>
                       </div>
 
                     </article>
@@ -1058,5 +1061,35 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Begin Map Script--> 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 <script src="../js/vendors/map.js"></script>
+<script>
+function resetPV() {
+  const pv = document.getElementById("pv_atual");
+
+  pv.innerText = "68";
+  localStorage.setItem("pv_atual", "68");
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const campos = document.querySelectorAll("[contenteditable=true]");
+
+  campos.forEach(campo => {
+    const id = campo.id;
+
+    if (!id) return; // segurança
+
+    // carregar valor salvo
+    const salvo = localStorage.getItem(id);
+    if (salvo) {
+      campo.innerText = salvo;
+    }
+
+    // salvar ao editar
+    campo.addEventListener("input", () => {
+      localStorage.setItem(id, campo.innerText);
+    });
+  });
+});
+</script>
 </body>
 </html>
