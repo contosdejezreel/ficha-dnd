@@ -23,6 +23,19 @@
 <script src="../js/vendors/modernizr.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
+  <style>
+    table, th, td {
+    border: 1px solid rgb(133, 131, 131);
+    padding: 5px;
+    }
+    table {
+      margin-left: auto;
+      margin-right: auto;
+        margin: auto;
+      text-align: center;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -583,6 +596,50 @@
                         
                         <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseChave" class="collapsed"> <span style=" text-transform: none;">Ver a regra dos Espaços de Magia</span></a></h6>
                         <div class="media-left"><p><span class="sun" style="width: 205px;">Conjuração - 1º ciclo 4 espaços / 2º ciclo 3 espaços / 3º ciclo 2 espaços</span></p></div><br>
+                         <table style="margin:auto;">
+                            <thead>
+                              <tr>
+                              <th>Ciclos de Magia</th>
+                              <th>Espaços de Magia</th>
+                              <th>Pontos Restantes</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr class="linha-magia" data-max="10">
+                              <td>1º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="2">
+                              <input type="checkbox" class="magia" data-cost="2">
+                              <input type="checkbox" class="magia" data-cost="2">
+                              <input type="checkbox" class="magia" data-cost="2">
+                              </td>
+                              <td class="restante">10</td>
+                              </tr>
+
+                              <tr class="linha-magia" data-max="9">
+                              <td>2º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="3">
+                              <input type="checkbox" class="magia" data-cost="3">
+                              <input type="checkbox" class="magia" data-cost="3">
+                              </td>
+                              <td class="restante">9</td>
+                              </tr>
+
+                              <tr class="linha-magia" data-max="8">
+                              <td>3º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="4">
+                              <input type="checkbox" class="magia" data-cost="4">
+                              </td>
+                              <td class="restante">8</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                          <br><hr><br>
+                        
                          <section id="collapseChave" class="panel-collapse collapse">
                           <p  class="panel-collapse ">
                             Para conjurar uma magia do 1º, 2º ou do 3º ciclo é necessário entender sobre os <b> Espaços de Magia.</b> Considere Ciclo de Magia o nível de poder mágico que seu personagem alcançou, ou seja, o máximo do conhecimento arcano adiquirido. Quanto maior o Ciclo de Mágia que você conhece, mais forte e experiênte. No nível 6 você conhece magias dos seguintes ciclos:<br><br>
@@ -755,14 +812,14 @@
                                 </div>  
                               </article>
                               <!-- 1 Ciclo -->
-                              <article class="portfolio-item mix ciclo-um">
+                              <article class="portfolio-item mix ciclo-dois">
                                   <h6 class="no-margin" style="font-size: 12px; text-transform: none;"><a  data-toggle="collapse" data-parent="#accordion" href="#collapseAbsorver" class="collapsed">Absorver elementos</a></h6>
                                   <span style="font-size: 10px;"><b>Alcance:</b> Próprio • <b>Componentes:</b> Foco Arcano • <b>Duração:</b> 1 rodada</span>
                                   <div id="collapseAbsorver" class="panel-collapse collapse row">
                                     <div class="padding-15" style="text-align: justify;"> 
                                       <p style="font-size: 10px;">
                                         <span style="font-size: 8px;">Abjuração de Nível 1</span><br>
-                                        A magia captura parte da energia recebida, diminuindo seu efeito sobre você e armazenando-a para seu próximo ataque. Você tem resistência ao tipo de dano que a ativou até o início do seu próximo turno. Além disso, na primeira vez que você acertar um ataque corpo a corpo no seu próximo turno, o alvo sofre <b>1d6 de dano adicional do tipo que a ativou +2</b>, e a magia termina.
+                                        A magia captura parte da energia recebida, diminuindo seu efeito sobre você e armazenando-a para seu próximo ataque. Você tem resistência ao tipo de dano que a ativou até o início do seu próximo turno. Além disso, na primeira vez que você acertar um ataque corpo a corpo no seu próximo turno, o alvo sofre <b>2d6 de dano adicional do tipo que a ativou +2</b>, e a magia termina.
                                         <br><i style="font-size: 7.5px;"><b>Em níveis superiores.</b> Quando você conjura esta magia usando um espaço de magia de 2º nível ou superior, o dano extra aumenta em 1d6 para cada nível acima do 1º.</i>
                                       </p>
                                     </div>                                
@@ -1317,6 +1374,39 @@
 <script src="../js/vendors/owl.carousel.min.js"></script> 
 <script src="../js/vendors/jquery.isotope.min.js"></script> 
 <script src="../js/main.js"></script> 
+
+<script>
+
+const linhas = document.querySelectorAll(".linha-magia")
+
+linhas.forEach(linha => {
+
+const max = Number(linha.dataset.max)
+const checkboxes = linha.querySelectorAll(".magia")
+const restante = linha.querySelector(".restante")
+
+function atualizar(){
+
+let usados = 0
+
+checkboxes.forEach(box=>{
+if(box.checked){
+usados += Number(box.dataset.cost)
+}
+})
+
+restante.innerText = max - usados
+
+}
+
+checkboxes.forEach(box=>{
+box.addEventListener("change", atualizar)
+})
+
+})
+
+</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.portfolio-filter .filter');
