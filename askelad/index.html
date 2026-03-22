@@ -188,11 +188,11 @@
                     <div class="row"> 
                       <div  class="pricing padding-20 padding-bottom-20" >
                         <h4>Pontos de Vida</h4>
-                        <p style="padding-top: 0px; ">Por nível: 1d8 + mod Con</p>
+                        <p style="padding-top: 0px; ">Por nível: 1d8 + mod Con • Total 65</p>
                         <div class=" exp-history"> 
                           <div class="exp">
                             <div class="media-body">
-                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span style="font-size: 80px;">65</span></a></h6>
+                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span id="pv_atual" contenteditable="true" style="font-size: 80px;">65</span></a> <button onclick="resetPV()" style="border: none;">🔄</button></h6>
                               <div class="media-left"><span class="sun">Pontos de Vida Atual</span></div>
                               <div id="collapsePV" class="panel-collapse collapse row">
                                 <div class="col-sm-6">
@@ -207,7 +207,7 @@
                               </div>
                             </div>
                           </div>
-                          <div><span class="sun" style="width: 205px; font-size: 27px;">P.V Temporário: ○ - ○ - ○</span></div>
+                          <div><span id="pv_temp" contenteditable="true" class="sun" style="width: 205px; font-size: 27px;">P.V Temporário:  <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div>
                         </div>
                       </div>
                         <!-- Exp -->
@@ -544,6 +544,50 @@
                         
                         <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseChave" class="collapsed"> <span style=" text-transform: none;">Ver a regra dos Espaços de Magia</span></a></h6>
                         <div class="media-left"><p><span class="sun" style="width: 205px;">Conjuração - <b>10 pontos</b> no 1º ciclo - <b>2,5 pontos por magia</b> / <b>9 pontos</b>no 2º ciclo - <b>3 pontos por magia</b></span></p></div><br>
+                             <table style="margin:auto;">
+                            <thead>
+                              <tr>
+                              <th>Ciclos de Magia</th>
+                              <th>Espaços de Magia</th>
+                              <th>Pontos Restantes</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr class="linha-magia" data-max="10">
+                              <td>1º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="2.5">
+                              <input type="checkbox" class="magia" data-cost="2.5">
+                              <input type="checkbox" class="magia" data-cost="2.5">
+                              <input type="checkbox" class="magia" data-cost="2.5">
+                              </td>
+                              <td class="restante">10</td>
+                              </tr>
+
+                              <tr class="linha-magia" data-max="9">
+                              <td>3º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="3">
+                              <input type="checkbox" class="magia" data-cost="3">
+                              <input type="checkbox" class="magia" data-cost="3">
+                              </td>
+                              <td class="restante">9</td>
+                              </tr>
+
+                              <!-- <tr class="linha-magia" data-max="8">
+                              <td>3º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="4">
+                              <input type="checkbox" class="magia" data-cost="4">
+                              </td>
+                              <td class="restante">8</td>
+                              </tr> -->
+
+                            </tbody>
+                          </table>
+                          <br><hr><br>
+ 
                         <section id="collapseChave" class="panel-collapse collapse">
                           <p  class="panel-collapse ">
                             Para conjurar uma magia do 1º, 2º ou do 3º ciclo é necessário entender sobre os <b> Espaços de Magia.</b> Considere Ciclo de Magia o nível de poder mágico que seu personagem alcançou, ou seja, o máximo do conhecimento arcano adiquirido. Quanto maior o Ciclo de Mágia que você conhece, mais forte e experiênte. As magias Raciais, você pode conjurá-las usando a regras de pontos. No nível 6 você conhece magias dos seguintes ciclos:<br><br>
@@ -855,7 +899,7 @@
                         <div id="collapse-2-1" class="panel-collapse collapse in">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="equipamentos" contenteditable="true"> 
                                 <b>•  ARMADURA E ARMAS</b><br>
                                 - Cota de Aneis - Armadura Mágica (14 CA) - - - - - - - - - - Peso: 15 kg<br>
                                 <!-- <spam style="font-size: 8px;">Campo de Amortecimento se, desvantagem na furtividade</spam> -->
@@ -877,7 +921,7 @@
                           <div class="panel-body">
                             <div class="row">
                               
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="recompensas" contenteditable="true"> 
                                  <b>Mochila de Explorador:<br>
                                     - Ração e Água para 2 dias;<br>
                                     - Armadilha de caçado;<br>
@@ -901,7 +945,7 @@
                         <div id="collapse-2-3" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="recompensas" contenteditable="true"> 
                                 <b>
                                   - Capa do Uniforme Militar;<br>
                                   - P.O: 30<br>
@@ -950,7 +994,10 @@
                         <h5 class="margin-top-30 margin-bottom-0">Nas Terras de Amastácia</h5>
                         <div class="col-md-12"><img class="img-responsive margin-top-10" src="mapa-de-amastacia.jpg" title="Mapa de Amastacia - Luan" alt="Mapa de Amastacia - Luan"></div>
                       </div>
-
+                      <div class="row">
+                        <h6 class="margin-top-30 margin-bottom-0">Anotações Importantes</h6>
+                        <p id="anotacao" contenteditable="true">• No atual momento ... </p>
+                      </div>
                     </article>
                   </div>
                 </div>
@@ -1108,6 +1155,7 @@
     </div>
   </footer>
   <!-- End Footer --> 
+
   
 </div>
 <!-- End Page Wrapper --> 
@@ -1119,6 +1167,39 @@
 <script src="../js/vendors/owl.carousel.min.js"></script> 
 <script src="../js/vendors/jquery.isotope.min.js"></script> 
 <script src="../js/main.js"></script> 
+
+<script>
+
+const linhas = document.querySelectorAll(".linha-magia")
+
+linhas.forEach(linha => {
+
+const max = Number(linha.dataset.max)
+const checkboxes = linha.querySelectorAll(".magia")
+const restante = linha.querySelector(".restante")
+
+function atualizar(){
+
+let usados = 0
+
+checkboxes.forEach(box=>{
+if(box.checked){
+usados += Number(box.dataset.cost)
+}
+})
+
+restante.innerText = max - usados
+
+}
+
+checkboxes.forEach(box=>{
+box.addEventListener("change", atualizar)
+})
+
+})
+
+</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.portfolio-filter .filter');
@@ -1156,5 +1237,35 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Begin Map Script--> 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 <script src="../js/vendors/map.js"></script>
+<script>
+function resetPV() {
+  const pv = document.getElementById("pv_atual");
+
+pv.innerText = "65";
+  localStorage.setItem("pv_atual", "65");
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const campos = document.querySelectorAll("[contenteditable=true]");
+
+  campos.forEach(campo => {
+    const id = campo.id;
+
+    if (!id) return; // segurança
+
+    // carregar valor salvo
+    const salvo = localStorage.getItem(id);
+    if (salvo) {
+      campo.innerText = salvo;
+    }
+
+    // salvar ao editar
+    campo.addEventListener("input", () => {
+      localStorage.setItem(id, campo.innerText);
+    });
+  });
+});
+</script>
 </body>
 </html>
