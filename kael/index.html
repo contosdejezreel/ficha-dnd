@@ -192,7 +192,7 @@
                     <div class="row"> 
                       <div  class="pricing padding-20 padding-bottom-20" >
                         <h4>Pontos de Vida</h4>
-                        <p style="padding-top: 0px; ">Por nível: 1d10 + mod Con</p>
+                        <p style="padding-top: 0px; ">Por nível: 1d10 + mod Con • Total 90</p>
                         <div class=" exp-history"> 
                           <div class="exp">
                             <div class="media-body">
@@ -1081,6 +1081,39 @@
 <script src="../js/vendors/owl.carousel.min.js"></script> 
 <script src="../js/vendors/jquery.isotope.min.js"></script> 
 <script src="../js/main.js"></script> 
+
+<script>
+
+const linhas = document.querySelectorAll(".linha-magia")
+
+linhas.forEach(linha => {
+
+const max = Number(linha.dataset.max)
+const checkboxes = linha.querySelectorAll(".magia")
+const restante = linha.querySelector(".restante")
+
+function atualizar(){
+
+let usados = 0
+
+checkboxes.forEach(box=>{
+if(box.checked){
+usados += Number(box.dataset.cost)
+}
+})
+
+restante.innerText = max - usados
+
+}
+
+checkboxes.forEach(box=>{
+box.addEventListener("change", atualizar)
+})
+
+})
+
+</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.portfolio-filter .filter');
@@ -1118,5 +1151,35 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Begin Map Script--> 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 <script src="../js/vendors/map.js"></script>
+<script>
+function resetPV() {
+  const pv = document.getElementById("pv_atual");
+
+  pv.innerText = "60";
+  localStorage.setItem("pv_atual", "60");
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const campos = document.querySelectorAll("[contenteditable=true]");
+
+  campos.forEach(campo => {
+    const id = campo.id;
+
+    if (!id) return; // segurança
+
+    // carregar valor salvo
+    const salvo = localStorage.getItem(id);
+    if (salvo) {
+      campo.innerText = salvo;
+    }
+
+    // salvar ao editar
+    campo.addEventListener("input", () => {
+      localStorage.setItem(id, campo.innerText);
+    });
+  });
+});
+</script>
 </body>
 </html>
