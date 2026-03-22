@@ -1058,7 +1058,7 @@
       <p>© Copyright Contos de Jezreel. All right reserved.</p>
     </div>
   </footer>
-  <!-- End Footer --> 
+  <!--  End Footer --> 
   
 </div>
 <!-- End Page Wrapper --> 
@@ -1070,6 +1070,39 @@
 <script src="../js/vendors/owl.carousel.min.js"></script> 
 <script src="../js/vendors/jquery.isotope.min.js"></script> 
 <script src="../js/main.js"></script> 
+
+<script>
+
+const linhas = document.querySelectorAll(".linha-magia")
+
+linhas.forEach(linha => {
+
+const max = Number(linha.dataset.max)
+const checkboxes = linha.querySelectorAll(".magia")
+const restante = linha.querySelector(".restante")
+
+function atualizar(){
+
+let usados = 0
+
+checkboxes.forEach(box=>{
+if(box.checked){
+usados += Number(box.dataset.cost)
+}
+})
+
+restante.innerText = max - usados
+
+}
+
+checkboxes.forEach(box=>{
+box.addEventListener("change", atualizar)
+})
+
+})
+
+</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.portfolio-filter .filter');
@@ -1139,3 +1172,10 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
