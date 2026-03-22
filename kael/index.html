@@ -216,7 +216,7 @@
                         <div class=" exp-history"> 
                           <div class="exp">
                             <div class="media-body">
-                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span style="font-size: 80px;">90</span></a></h6>
+                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span style="font-size: 80px;">90</span></a> <button onclick="resetPV()" style="border: none;">🔄</button></h6>
                               <div class="media-left"><span class="sun">Pontos de Vida Atual</span></div>
                               <div id="collapsePV" class="panel-collapse collapse row">
                                 <div class="col-sm-6">
@@ -231,7 +231,7 @@
                               </div>
                             </div>
                           </div>
-                          <div><span class="sun" style="width: 205px; font-size: 27px;">P.V Temporário: ○ - ○ - ○</span></div>
+                          <div><span id="pv_temp" contenteditable="true" class="sun" style="width: 205px; font-size: 27px;">P.V Temporário: <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div>
                         </div>
                       </div>
                         <!-- Exp -->
@@ -673,7 +673,51 @@
                         
                         <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseChave" class="collapsed"> <span style=" text-transform: none;">Ver a regra dos Espaços de Magia</span></a></h6>
                         <div class="media-left"><p><span class="sun" style="width: 205px;">Conjuração - 1º ciclo 4 espaços / 2º ciclo 2 espaços </span></p></div><br>
-                         <section id="collapseChave" class="panel-collapse collapse">
+                              <table style="margin:auto;">
+                            <thead>
+                              <tr>
+                              <th>Ciclos de Magia</th>
+                              <th>Espaços de Magia</th>
+                              <th>Pontos Restantes</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr class="linha-magia" data-max="10">
+                              <td>1º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="2.5">
+                              <input type="checkbox" class="magia" data-cost="2.5">
+                              <input type="checkbox" class="magia" data-cost="2.5">
+                              <input type="checkbox" class="magia" data-cost="2.5">
+                              </td>
+                              <td class="restante">10</td>
+                              </tr>
+
+                              <tr class="linha-magia" data-max="9">
+                              <td>2º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="3">
+                              <input type="checkbox" class="magia" data-cost="3">
+                              <input type="checkbox" class="magia" data-cost="3">
+                              </td>
+                              <td class="restante">9</td>
+                              </tr>
+
+                              <!-- <tr class="linha-magia" data-max="8">
+                              <td>3º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="4">
+                              <input type="checkbox" class="magia" data-cost="4">
+                              </td>
+                              <td class="restante">8</td>
+                              </tr> -->
+
+                            </tbody>
+                          </table>
+                          <br><hr><br>
+ 
+                          <section id="collapseChave" class="panel-collapse collapse">
                           <p  class="panel-collapse ">
                             Para conjurar uma magia do 1º, 2º ou do 3º ciclo é necessário entender sobre os <b> Espaços de Magia.</b> Considere Ciclo de Magia o nível de poder mágico que seu personagem alcançou, ou seja, o máximo do conhecimento arcano adiquirido. Quanto maior o Ciclo de Mágia que você conhece, mais forte e experiênte. No nível 6 você conhece magias dos seguintes ciclos:<br><br>
                           </p>
@@ -893,7 +937,7 @@
                         <div id="collapse-2-1" class="panel-collapse collapse in">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="equipamentos" contenteditable="true"> 
                                 <b>•  ARMADURA E ARMAS</b><br>
                                 - Armadura Cota de Malha  (16 CA) - - - - - - - - - - Peso: 27 kg<br>
                                 <spam style="font-size: 8px;">Furtividade • Desvantagem</spam>
@@ -920,7 +964,7 @@
                           <div class="panel-body">
                             <div class="row">
                               
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="recompensas" contenteditable="true"> 
                                  <b>Conjunto de Anotações sobre:<br>
                                     - Karkarrask e suas escavações;<br>
                                   </b>
@@ -938,7 +982,7 @@
                         <div id="collapse-2-3" class="panel-collapse collapse">
                           <div class="panel-body">
                             <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;"> 
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="dinheiro" contenteditable="true"> 
                                 <b>- Vestimentas de Viajante;<br>
                                   - Roupas para disfarce, acima da armadura;<br>
                                   - P.O: 50;<br>
@@ -1006,13 +1050,15 @@
                       <p>
                         Você recebe apoio de cavaleiros de sua ordem e aqueles que concordam com seus objetivos. Essa ajuda vem na forma de refeições e abrigo, cura conforme apropriado, e o ocasional risco de vida com o povo ajudando um cavaleiro ferido numa briga de rua.
                       </p><br>
-                      <div class="row">
-                        <h5 class="margin-top-30 margin-bottom-0">Inicio da Jornada em Onur</h5>
-                        <div class="col-md-12"><img class="img-responsive margin-top-10" src="../images/mapa-de-onur.jpg" title="Mapa de Onur" alt="Mapa de Onur"></div>
+                     <div class="row">
+                        <h5 class="margin-top-30 margin-bottom-0">Nas Terras de Amastácia</h5>
+                        <div class="col-md-12"><img class="img-responsive margin-top-10" src="../images/mapa-de-amastacia.jpg" title="Mapa de Amastacia - Luan" alt="Mapa de Amastacia - Luan"></div>
+                        <br><br><br>
                       </div>
-                      <!-- <h6 class="margin-top-30 margin-bottom-0">Carta da Biblioteca do Azullom</h6>
-                      <blockquote class="margin-top-30">“Aos meus servos, dou-lhes o que pedem, por um preço baixo. Preço que será cobrado no ano do amadurecimento desta criança, duas crianças no preço de uma, duas esposas, no lugar de Brises, uma traidora e uma mulher importante no lugar da Rainha. Esse é o contrato que essa cidadela testemunhará pelo seu nobre gesto oh Arcantos, todos saberão que eu retornei a vocês.”</blockquote> -->
-
+                      <div class="row">
+                        <h6 class="margin-top-30 margin-bottom-0">Anotações Importantes</h6>
+                        <p id="anotacao" contenteditable="true">• No atual momento ... </p>
+                      </div>
                     </article>
                   </div>
                 </div>
@@ -1175,8 +1221,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function resetPV() {
   const pv = document.getElementById("pv_atual");
 
-  pv.innerText = "60";
-  localStorage.setItem("pv_atual", "60");
+  pv.innerText = "90";
+  localStorage.setItem("pv_atual", "90");
 }
 </script>
 <script>
