@@ -1086,30 +1086,20 @@ table {
 
 <script>
 
-const linhas = document.querySelectorAll(".linha-magia")
+const checkboxes = document.querySelectorAll(".magia")
 
-linhas.forEach(linha => {
+checkboxes.forEach(box => {
 
-const max = Number(linha.dataset.max)
-const checkboxes = linha.querySelectorAll(".magia")
-const restante = linha.querySelector(".restante")
+const salvo = localStorage.getItem(box.id)
 
-function atualizar(){
-
-let usados = 0
-
-checkboxes.forEach(box=>{
-if(box.checked){
-usados += Number(box.dataset.cost)
-}
-})
-
-restante.innerText = max - usados
-
+if(salvo === "true"){
+box.checked = true
 }
 
-checkboxes.forEach(box=>{
-box.addEventListener("change", atualizar)
+box.addEventListener("change", () => {
+
+localStorage.setItem(box.id, box.checked)
+
 })
 
 })
