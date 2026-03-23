@@ -1086,20 +1086,30 @@ table {
 
 <script>
 
-const checkboxes = document.querySelectorAll(".magia")
+const linhas = document.querySelectorAll(".linha-magia")
 
-checkboxes.forEach(box => {
+linhas.forEach(linha => {
 
-const salvo = localStorage.getItem(box.id)
+const max = Number(linha.dataset.max)
+const checkboxes = linha.querySelectorAll(".magia")
+const restante = linha.querySelector(".restante")
 
-if(salvo === "true"){
-box.checked = true
+function atualizar(){
+
+let usados = 0
+
+checkboxes.forEach(box=>{
+if(box.checked){
+usados += Number(box.dataset.cost)
+}
+})
+
+restante.innerText = max - usados
+
 }
 
-box.addEventListener("change", () => {
-
-localStorage.setItem(box.id, box.checked)
-
+checkboxes.forEach(box=>{
+box.addEventListener("change", atualizar)
 })
 
 })
@@ -1147,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function resetPV() {
   const pv = document.getElementById("pv_atual");
 
-  pv.innerText = "68";
+pv.innerText = "68";
   localStorage.setItem("pv_atual", "68");
 }
 </script>
@@ -1175,7 +1185,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
-
 
 
 
