@@ -686,10 +686,10 @@
                               <tr class="linha-magia" data-max="10">
                               <td>1º</td>
                               <td>
-                              <input type="checkbox" class="magia" data-cost="2.5">
-                              <input type="checkbox" class="magia" data-cost="2.5">
-                              <input type="checkbox" class="magia" data-cost="2.5">
-                              <input type="checkbox" class="magia" data-cost="2.5">
+                              <input type="checkbox" class="magia" id="magia1" data-cost="2.5">
+                              <input type="checkbox" class="magia" id="magia2" data-cost="2.5">
+                              <input type="checkbox" class="magia" id="magia3" data-cost="2.5">
+                              <input type="checkbox" class="magia" id="magia4" data-cost="2.5">
                               </td>
                               <td class="restante">10</td>
                               </tr>
@@ -697,9 +697,9 @@
                               <tr class="linha-magia" data-max="9">
                               <td>2º</td>
                               <td>
-                              <input type="checkbox" class="magia" data-cost="3">
-                              <input type="checkbox" class="magia" data-cost="3">
-                              <input type="checkbox" class="magia" data-cost="3">
+                              <input type="checkbox" class="magia" id="magia5" data-cost="3">
+                              <input type="checkbox" class="magia" id="magia6" data-cost="3">
+                              <input type="checkbox" class="magia" id="magia7" data-cost="3">
                               </td>
                               <td class="restante">9</td>
                               </tr>
@@ -1191,8 +1191,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function resetPV() {
   const pv = document.getElementById("pv_atual");
 
-  pv.innerText = "60";
-  localStorage.setItem("pv_atual", "60");
+  pv.innerText = "90";
+  localStorage.setItem("pv_atual", "90");
 }
 </script>
 <script>
