@@ -118,7 +118,7 @@
                               <div id="collapseEXP" class="panel-collapse collapse">
                                 <div class="panel-body" style="padding-top: 0px;">
                                   <p style="text-align: center;">
-                                    <b>32%</b> • <b>4.800 - 15.000</b>
+                                    <b>54%</b> • <b>8.100 - 15.000</b>
                                   </p>
                                 </div>
                               </div>
@@ -1149,38 +1149,6 @@
 <script src="../js/main.js"></script> 
 
 <script>
-
-const linhas = document.querySelectorAll(".linha-magia")
-
-linhas.forEach(linha => {
-
-const max = Number(linha.dataset.max)
-const checkboxes = linha.querySelectorAll(".magia")
-const restante = linha.querySelector(".restante")
-
-function atualizar(){
-
-let usados = 0
-
-checkboxes.forEach(box=>{
-if(box.checked){
-usados += Number(box.dataset.cost)
-}
-})
-
-restante.innerText = max - usados
-
-}
-
-checkboxes.forEach(box=>{
-box.addEventListener("change", atualizar)
-})
-
-})
-
-</script>
-
-<script>
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.portfolio-filter .filter');
     const items = document.querySelectorAll('.portfolio-item');
@@ -1217,12 +1185,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Begin Map Script--> 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 <script src="../js/vendors/map.js"></script>
+
+
 <script>
 function resetPV() {
   const pv = document.getElementById("pv_atual");
 
-  pv.innerText = "90";
-  localStorage.setItem("pv_atual", "90");
+  pv.innerText = "60";
+  localStorage.setItem("pv_atual", "60");
 }
 </script>
 <script>
@@ -1247,5 +1217,96 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script>
+    // 1. Bloqueia o clique com o botão direito (Menu de Contexto)
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // 2. Bloqueia atalhos de teclado comuns para desenvolvedores
+    document.onkeydown = function(e) {
+        // Bloqueia F12
+        if(e.keyCode == 123) {
+            return false;
+        }
+        // Bloqueia Ctrl+Shift+I (Inspecionar)
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        // Bloqueia Ctrl+Shift+C (Selecionar elemento)
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+            return false;
+        }
+        // Bloqueia Ctrl+Shift+J (Console)
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        // Bloqueia Ctrl+U (Exibir código fonte)
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+    }
+</script>
+
+<script>
+
+const checkboxes = document.querySelectorAll(".magia")
+
+checkboxes.forEach(box => {
+
+const salvo = localStorage.getItem(box.id)
+
+if(salvo === "true"){
+box.checked = true
+}
+
+box.addEventListener("change", () => {
+localStorage.setItem(box.id, box.checked)
+})
+
+})
+
+</script>
+
+<script>
+
+const linhas = document.querySelectorAll(".linha-magia")
+
+linhas.forEach(linha => {
+
+const max = Number(linha.dataset.max)
+const checkboxes = linha.querySelectorAll(".magia")
+const restante = linha.querySelector(".restante")
+
+function atualizar(){
+
+let usados = 0
+
+checkboxes.forEach(box=>{
+if(box.checked){
+usados += Number(box.dataset.cost)
+}
+})
+
+restante.innerText = max - usados
+
+}
+
+checkboxes.forEach(box=>{
+box.addEventListener("change", atualizar)
+})
+
+atualizar()
+
+})
+
+</script>
+
+
 </body>
 </html>
+
+
+
+
+
+
+
