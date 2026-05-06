@@ -1,88 +1,3 @@
-
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.portfolio-filter .filter');
-    const items = document.querySelectorAll('.portfolio-item');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // 1. Pega o valor do filtro e limpa o ponto (ex: ".truques" -> "truques")
-            let filterValue = this.getAttribute('data-filter').replace('.', '');
-
-            // 2. Remove a classe de destaque de todos os botões e coloca no atual
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            // 3. Lógica de Esconder/Mostrar corrigida
-            items.forEach(item => {
-                // Se for "all", mostra tudo
-                if (filterValue === 'all') {
-                    item.style.display = 'block';
-                } 
-                // Se o item tiver a classe correspondente ao filtro, mostra
-                else if (item.classList.contains(filterValue)) {
-                    item.style.display = 'block';
-                } 
-                // Se não for nenhum dos dois, esconde obrigatoriamente
-                else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
-});
-
-
-const checkboxes = document.querySelectorAll(".magia")
-
-checkboxes.forEach(box => {
-
-const salvo = localStorage.getItem(box.id)
-
-if(salvo === "true"){
-box.checked = true
-}
-
-box.addEventListener("change", () => {
-localStorage.setItem(box.id, box.checked)
-})
-
-})
-
-
-const linhas = document.querySelectorAll(".linha-magia")
-
-linhas.forEach(linha => {
-
-const max = Number(linha.dataset.max)
-const checkboxes = linha.querySelectorAll(".magia")
-const restante = linha.querySelector(".restante")
-
-function atualizar(){
-
-let usados = 0
-
-checkboxes.forEach(box=>{
-if(box.checked){
-usados += Number(box.dataset.cost)
-}
-})
-
-restante.innerText = max - usados
-
-}
-
-checkboxes.forEach(box=>{
-box.addEventListener("change", atualizar)
-})
-
-atualizar()
-
-})
-
-
-
 const pvMax = 60
 
 const campo = document.getElementById("valorPV")
@@ -100,14 +15,33 @@ document.getElementById("pvAtual").innerText = pvMax
 
 atualizarBarra()
 
+// 🔥 NOVO BLOCO
+const estadoCritico = localStorage.getItem("emEstadoCritico")
+const tentativasSalvas = localStorage.getItem("tentativasMorte")
+
+if(estadoCritico === "true"){
+
+emEstadoCritico = true
+tentativasMorte = Number(tentativasSalvas) || 0
+
+abrirModalMorte()
+
+}else{
+
+verificarMorte()
+
+}
+
 })
 
 // ENTER
 campo.addEventListener("keydown", function(event){
 if(event.key === "Enter"){
 alterarPV()
+verificarMorte()
 }
 })
+
 
 // COR VISUAL INPUT
 campo.addEventListener("input", function(){
@@ -149,7 +83,7 @@ let dano = Number(texto)
 
 atual -= dano
 
-if(atual < 0) atual = 0
+if(atual < -(pvMax * 0.5)) atual = -(pvMax * 0.5)
 
 }
 
@@ -176,6 +110,7 @@ atual += valor
 pv.innerText = atual
 
 atualizarBarra()
+verificarMorte()
 
 }
 
@@ -231,6 +166,189 @@ barra.classList.remove("barraCritica")
 }
 
 
+
+let tentativasMorte = 0
+let emEstadoCritico = false
+
+function verificarMorte(){
+
+let atual = Number(document.getElementById("pvAtual").innerText)
+
+// só ativa uma vez
+if(atual <= -(pvMax * 0.1) && !emEstadoCritico){
+
+emEstadoCritico = true
+tentativasMorte = 0
+
+// SALVA
+localStorage.setItem("emEstadoCritico", "true")
+localStorage.setItem("tentativasMorte", "0")
+
+abrirModalMorte()
+}
+
+}
+
+// ABRE MODAL
+function abrirModalMorte(){
+
+document.getElementById("modalMorte").style.display = "flex"
+
+}
+
+// RESULTADO DO TESTE
+function resultadoMorte(passou){
+    
+    localStorage.removeItem("emEstadoCritico")
+    localStorage.removeItem("tentativasMorte")
+
+document.getElementById("modalMorte").style.display = "none"
+
+if(passou){
+
+emEstadoCritico = false
+tentativasMorte = 0
+
+// zera o PV
+let pv = document.getElementById("pvAtual")
+pv.innerText = 0
+
+localStorage.setItem("pvAtual", 0)
+
+atualizarBarra()
+
+// muda texto do modal
+document.getElementById("textoMorte").innerText =
+"Parabéns, Malahin te deu uma segunda chance, você resistiu e sobreviverá!"
+
+// esconde botões de teste
+document.getElementById("botoesMorte").style.display = "none"
+
+// mostra botão continuar
+document.getElementById("btnContinuar").style.display = "inline-block"
+
+return
+}else{
+
+tentativasMorte++
+
+localStorage.setItem("tentativasMorte", tentativasMorte)
+
+if(tentativasMorte >= 3){
+
+mostrarGameOver()
+
+return
+}
+
+// tenta novamente depois de 20 segundos
+setTimeout(() => {
+abrirModalMorte()
+}, 10000)
+
+}
+
+}
+
+function fecharModalMorte(){
+
+document.getElementById("modalMorte").style.display = "none"
+
+// reset visual do modal para próxima vez
+document.getElementById("textoMorte").innerText =
+"Você está à beira da morte. Faça um teste de resistência para sobreviver."
+
+document.getElementById("botoesMorte").style.display = "flex"
+
+document.getElementById("btnContinuar").style.display = "none"
+
+}
+
+const checkboxes = document.querySelectorAll(".magia")
+
+checkboxes.forEach(box => {
+
+const salvo = localStorage.getItem(box.id)
+
+if(salvo === "true"){
+box.checked = true
+}
+
+box.addEventListener("change", () => {
+localStorage.setItem(box.id, box.checked)
+})
+
+})
+
+
+const linhas = document.querySelectorAll(".linha-magia")
+
+linhas.forEach(linha => {
+
+const max = Number(linha.dataset.max)
+const checkboxes = linha.querySelectorAll(".magia")
+const restante = linha.querySelector(".restante")
+
+function atualizar(){
+
+let usados = 0
+
+checkboxes.forEach(box=>{
+if(box.checked){
+usados += Number(box.dataset.cost)
+}
+})
+
+restante.innerText = max - usados
+
+}
+
+checkboxes.forEach(box=>{
+box.addEventListener("change", atualizar)
+})
+
+atualizar()
+
+})
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.portfolio-filter .filter');
+    const items = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // 1. Pega o valor do filtro e limpa o ponto (ex: ".truques" -> "truques")
+            let filterValue = this.getAttribute('data-filter').replace('.', '');
+
+            // 2. Remove a classe de destaque de todos os botões e coloca no atual
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // 3. Lógica de Esconder/Mostrar corrigida
+            items.forEach(item => {
+                // Se for "all", mostra tudo
+                if (filterValue === 'all') {
+                    item.style.display = 'block';
+                } 
+                // Se o item tiver a classe correspondente ao filtro, mostra
+                else if (item.classList.contains(filterValue)) {
+                    item.style.display = 'block';
+                } 
+                // Se não for nenhum dos dois, esconde obrigatoriamente
+                else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+
+
+
     // 1. Bloqueia o clique com o botão direito (Menu de Contexto)
     document.addEventListener('contextmenu', event => event.preventDefault());
 
@@ -258,3 +376,26 @@ barra.classList.remove("barraCritica")
         }
     }
     
+
+function mostrarGameOver(){
+
+document.getElementById("gameOver").style.display = "flex"
+
+}
+
+function reviver(){
+
+document.getElementById("gameOver").style.display = "none"
+
+let pv = document.getElementById("pvAtual")
+
+pv.innerText = pvMax
+
+localStorage.setItem("pvAtual", pvMax)
+
+emEstadoCritico = false
+tentativasMorte = 0
+
+atualizarBarra()
+
+}
