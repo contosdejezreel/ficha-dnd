@@ -1,3 +1,153 @@
+
+/* FUNDO ESCURO */
+.modal-overlay{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+backdrop-filter: blur(4px);
+z-index:9999;
+justify-content:center;
+align-items:center;
+}
+
+/* CAIXA */
+.modal-box{
+background:#1a1a1a;
+border:1px solid #333;
+border-radius:12px;
+width:100%;
+max-width:400px;
+padding:20px;
+position:relative;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* BOTÃO FECHAR */
+.modal-close{
+position:absolute;
+top:10px;
+right:10px;
+background:transparent;
+border:none;
+color:#aaa;
+font-size:18px;
+cursor:pointer;
+}
+
+.modal-close:hover{
+color:white;
+}
+
+/* CONTEÚDO */
+.modal-content{
+text-align:center;
+}
+
+/* ÍCONE */
+.modal-icon{
+font-size:40px;
+margin-bottom:10px;
+color:#f87171;
+}
+
+/* TÍTULO */
+.modal-title{
+font-size:20px;
+margin-bottom:10px;
+color:white;
+}
+
+/* TEXTO */
+.modal-text{
+font-size:14px;
+color:#ccc;
+margin-bottom:20px;
+}
+
+/* TIMER */
+.modal-timer{
+font-size:48px;
+font-weight:bold;
+color:#ef4444;
+margin-bottom:20px;
+}
+
+/* BOTÕES */
+.modal-actions{
+display:flex;
+gap:15px;
+justify-content:center;
+margin-top:20px;
+}
+
+.btn-anim{
+position:relative;
+width:160px;
+height:40px;
+font-size:16px;
+font-family:sans-serif;
+letter-spacing:2px;
+cursor:pointer;
+background:transparent;
+border:2px solid #aaa;
+color:#aaa;
+overflow:hidden;
+transition:all .35s;
+}
+
+.btn-anim span{
+position:relative;
+z-index:2;
+}
+
+/* EFEITO FUNDO */
+.btn-anim::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:100%;
+transition:all .35s;
+z-index:1;
+}
+
+/* HOVER GERAL */
+.btn-anim:hover{
+color:#fff;
+}
+
+.btn-anim:hover::after{
+width:100%;
+}
+
+/* VARIAÇÕES */
+
+/* RESISTIR (AZUL) */
+.resistir{
+border-color:#0ab117;
+color:#0ab117;
+}
+
+.resistir::after{
+background:#0ab117;
+}
+
+/* FALHAR (VERMELHO) */
+.falhar{
+border-color:#ef4444;
+color:#ef4444;
+}
+
+.falhar::after{
+background:#ef4444;
+}
+
+    
     table, th, td {
         border: 1px solid rgb(133, 131, 131);
         padding: 5px;
@@ -1873,3 +2023,74 @@
   }
 }
 /*# sourceMappingURL=button.css.map */
+
+#btnContinuar{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#22c55e;
+color:white;
+cursor:pointer;
+}
+
+#btnContinuar:hover{
+background:#16a34a;
+}
+
+/* GAME OVER*/
+.gameover-overlay{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+backdrop-filter: blur(6px);
+z-index:10000;
+justify-content:center;
+align-items:center;
+animation: fadeIn 0.9s ease;
+}
+
+.gameover-box{
+text-align:center;
+color:white;
+}
+
+.skull{
+font-size:80px;
+margin-bottom:10px;
+animation: pulse 1.5s infinite;
+}
+
+.gameover-box h1{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.gameover-box button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#ef4444;
+color:white;
+cursor:pointer;
+}
+
+.gameover-box button:hover{
+background:#dc2626;
+}
+
+/* animações */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
