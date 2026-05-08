@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/responsive.css">
 <link rel="stylesheet" href="ametista.css">
+<link rel="stylesheet" href="estilos.css">
 
 <!-- FontsOnline -->
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -23,23 +24,47 @@
 <script src="../js/vendors/modernizr.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-  
-<style>
-  table, th, td {
-  border: 1px solid rgb(131, 131, 133);
-  padding: 5px;
-}
-table {
-  margin-left: auto;
-  margin-right: auto;
-    margin: auto;
-  text-align: center;
-}
-</style>
-
 </head>
 <body>
+  <!-- MODAL RESISTÊNCIA A MORTE -->
+    <div id="modalMorte" class="modal-overlay">
 
+      <div class="modal-box">
+
+        <button class="modal-close" onclick="resultadoMorte(false)">✖</button>
+
+        <div class="modal-content">
+
+          <div class="modal-icon">⚠</div>
+
+          <h3 class="modal-title">
+            <b style="color: red;">ESTADO CRÍTICO</b>
+          </h3>
+
+          <p class="modal-text" id="textoMorte">
+            <b style="color: #ddd;">Você está à beira da morte. 
+            Faça um teste de resistência para sobreviver.</b>
+          </p>
+          <div id="botoesMorte">
+
+            <button class="btn-anim resistir" onclick="resultadoMorte(true)">
+              <span>✔ Resistir</span>
+            </button>
+
+            <button class="btn-anim falhar" onclick="resultadoMorte(false)">
+              <span>✖ Falhar</span>
+            </button>
+
+          </div>
+
+          <button id="btnContinuar" style="display:none;" onclick="fecharModalMorte()">
+            Continuar
+          </button>
+        </div>
+
+      </div>
+
+    </div>
 <!-- Page Wrapper -->
 <div id="wrap"> 
   
@@ -68,7 +93,7 @@ table {
                 
                 <!-- Professional Details -->
                 <h5 class="tittle">Personagem - Askelad</h5>
-                <img src="askelad.png" class="img-responsive" alt="Askelad">
+                <img src="azaphiros.png" class="img-responsive" alt="Askelad">
                  <!-- Academic Background -->
                   <div class="inside-sec margin-top-30 accordion" id="accordion"> 
                     <!-- Academic Background -->
@@ -203,28 +228,50 @@ table {
                       <div  class="pricing padding-20 padding-bottom-20" >
                         <h4>Pontos de Vida</h4>
                         <p style="padding-top: 0px; ">Por nível: 1d8 + mod Con • Total 65</p>
-                        <div class=" exp-history"> 
-                          <div class="exp">
-                            <div class="media-body">
-                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span id="pv_atual" contenteditable="true" style="font-size: 80px;">65</span></a> <button onclick="resetPV()" style="border: none;">🔄</button></h6>
-                              <div class="media-left"><span class="sun">Pontos de Vida Atual</span></div>
-                              <div id="collapsePV" class="panel-collapse collapse row">
-                                <div class="col-sm-6">
-                                  <h6>10 PV</h6>
-                                  <p>1/4 Teste de Cansaço</p>
+                        <div class="exp-history"> 
+                               <input type="text" id="valorPV" class="custom-btn-calculadora" placeholder="TOTAL"><button class="custom-btn btn-12"><span onclick="alterarPV()">Calcular</span><span>Dano | Cura</span></button>
+                              <div class="exp">
+                                <div class="media-body">
+                                  <h6><a data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span  id="pvAtual" style="font-size: 80px;">65</span></a> <button onclick="resetPV()" style="border: none;" >🔄</button></h6>
+
+                                  <div class="media-left"><span class="sun">Pontos de Vida Atual</span></div>
+                                  <br><br>
+                                    <div id="barraContainer">
+                                      <div id="barraVida"></div>
+                                    </div>
+                                  <div id="collapsePV" class="panel-collapse collapse row">
+                                  
+                                    <div class="col-sm-6">
+                                      <h6>12 PV</h6>
+                                      <p>1/4 Teste de Cansaço</p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <h6>-5 PV</h6>
+                                      <p>Resistência a Morte</p>
+                                    </div>
+                                    
+                                  </div>
                                 </div>
-                                <div class="col-sm-6">
-                                  <h6>-10 PV</h6>
-                                  <p>Resistência a Morte</p>
-                                </div>
-                                
                               </div>
+                           <div><span id="pv_temp" contenteditable="true"  class="sun" style="width: 205px; font-size: 18px;">P.V Temporário: <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div><br>
+                              <div class="col-sm-12">
+
+                                <div>
+
+                                <button class="btnpv" onclick="tempPV(-10)">-10</button>
+                                <button class="btnpv" onclick="tempPV(-5)">-5</button>
+                                <button class="btnpv" onclick="tempPV(-1)">-1</button>
+
+                                <button class="btnpv" onclick="tempPV(1)">+1</button>
+                                <button class="btnpv" onclick="tempPV(5)">+5</button>
+                                <button class="btnpv" onclick="tempPV(10)">+10</button>
+
+                                </div>
+                              </div>
+                              <br><br>
                             </div>
                           </div>
-                          <div><span id="pv_temp" contenteditable="true" class="sun" style="width: 205px; font-size: 27px;">P.V Temporário:  <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div>
-                        </div>
-                      </div>
-                        <!-- Exp -->
+                            <!-- Exp -->
                     </div>
                   </div>                      
                 </div> 
@@ -347,9 +394,9 @@ table {
                   <ul class="isop-filter nav nav-pills">
                     <li role="presentation" class="active"><a href="#habilidades" aria-controls="habilidades" role="tab" data-toggle="tab"><i class="icon-user"></i>Habilidades</a></li>
                     <li role="presentation"><a href="#magias" aria-controls="magias" role="tab" data-toggle="tab"><i class="icon-book-open"></i>Magias</a></li>
+                    <li role="presentation"><a href="#combos" aria-controls="combos" role="tab" data-toggle="tab"> <i class="icon-rocket"></i>Combos</a></li>
                     <li role="presentation"><a href="#carregando" aria-controls="carregando" role="tab" data-toggle="tab"><i class="icon-note"></i>Carga</a></li>
                     <li role="presentation"><a href="#anotacoes" aria-controls="anotacoes" role="tab" data-toggle="tab"> <i class="icon-pencil"></i>Anotações</a></li>
-                    <li role="presentation"><a href="#combos" aria-controls="combos" role="tab" data-toggle="tab"> <i class="icon-rocket"></i>Combos</a></li>
                   </ul>
                 </div>
               </nav>
@@ -896,127 +943,8 @@ table {
                   
                   
                 </div>
-                
-               <!-- Equipamentos -->
-                <div role="tabpane2" class="tab-pane fade in" id="carregando">
-                  <div class="inside-sec"> 
-                    <!-- BIO AND SKILLS -->
-                    <h5 class="tittle">Todos os Itens e Equipamentos</h5>
-                  
-                    <div class="panel-group accordion gray-bg padding-20 padding-top-50 padding-bottom-50 accordion-style-2 " id="accordion-1"> 
 
-                        <!-- Accoding 1 -->
-                      <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2-1">Equipamentos de Combate </a> </h4>
-                        </div>
-                        <div id="collapse-2-1" class="panel-collapse collapse in">
-                          <div class="panel-body">
-                            <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="equipamentos" contenteditable="true"> 
-                                <b>•  ARMADURA E ARMAS</b><br>
-                                - Cota de Aneis - Armadura Mágica (14 CA) - - - - - - - - - - Peso: 15 kg<br>
-                                <!-- <spam style="font-size: 8px;">Campo de Amortecimento se, desvantagem na furtividade</spam> -->
-                                - Espada Longa • Azaphyros (1d8 Dano Cortante | 1d10 com duas mãos) - - - - - - Peso: 2 kg<br>
-                                <spam style="font-size: 8px;"><b>Propriedade:</b> Versátil</spam><br><br>
-                                
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Accoding 2 -->
-                      <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2-2"  class="collapsed"> Recompesas da Campanha</a> </h4>
-                        </div>
-                        <div id="collapse-2-2" class="panel-collapse collapse">
-                          <div class="panel-body">
-                            <div class="row">
-                              
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="recompensas" contenteditable="true"> 
-                                 <b>Mochila de Explorador:<br>
-                                    - Ração e Água para 2 dias;<br>
-                                    - Armadilha de caçado;<br>
-                                    - Uma medalha de patente;<br>
-                                    - Roupas Comum;<br>
-                                    - Anotações sobre os procurados - Covil dos Ladrões;<br>
-                                    - Arcabus Quebrada;<br><br>
-                                  </b>
-                                    <b>PESO Total - 21 Kg</b>
-                                <br></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <!-- Accoding 3 -->
-                      <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2-3" class="collapsed"> Dinheiro • Vestes • Comidas</a> </h4>
-                        </div>
-                        <div id="collapse-2-3" class="panel-collapse collapse">
-                          <div class="panel-body">
-                            <div class="row">
-                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="recompensas" contenteditable="true"> 
-                                <b>
-                                  - Capa do Uniforme Militar;<br>
-                                  - P.O: 30<br>
-                                </b>
-                              </div>
-                              
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
-                  
-                  
-                  
-                  
-                </div>
-                                
-                <!-- Anotações -->
-                <div role="tabpanel" class="tab-pane fade col-md-12" id="anotacoes">
-                  <div class="inside-sec blog"> 
-                    <!-- BIO AND SKILLS -->
-                    <h5 class="tittle">História</h5>
                     
-                    <!-- Blog -->
-                    <article class="blog-post width-100 padding-25">
-                      <!-- BLOG DETAIL -->
-                      <h4 class="font-normal">Viagens e Missões</h4>
-                      <span class="post-bt">Cidade Atual: <span class="text-color-primary">Amastácia</span></span>
-                      <ul class="post-info">
-                        <li> <i class="fa fa-bookmark-o"></i>HIstórias e Anotações Importantes</li>
-                        <li>  </li>
-                      </ul>
-
-                      <h5 class="margin-top-30 margin-bottom-0">Recurso: Patente Militar</h5>
-                      <p>
-                        Você tem uma patente de sua carreira como soldado. Soldados leais a sua organização ainda reconhecem sua autoridade e influência, prestam deferência a você se de patente menor. Você pode usar sua influência para emprestar cavalos e equipamentos simples, ou ter acesso a fortaleza e acampamentos militares onde sua patente é reconhecida.
-                      </p><br>
-                      <div class="row">
-                        <h5 class="margin-top-30 margin-bottom-0">Primeira missão em Onur</h5>
-                        <div class="col-md-12"><img class="img-responsive margin-top-10" src="../images/mapa-de-onur.jpg" title="Mapa de Onur" alt="Mapa de Onur"></div>
-                      </div>
-                      <!-- <h6 class="margin-top-30 margin-bottom-0">Anotações do meu pai</h6> -->
-                      <div class="row">
-                        <h5 class="margin-top-30 margin-bottom-0">Nas Terras de Amastácia</h5>
-                        <div class="col-md-12"><img class="img-responsive margin-top-10" src="../images/mapa-de-amastacia.jpg" title="Mapa de Amastacia - Luan" alt="Mapa de Amastacia - Luan"></div>
-                      </div>
-                      <div class="row">
-                        <h6 class="margin-top-30 margin-bottom-0">Anotações Importantes</h6>
-                        <p id="anotacao" contenteditable="true">• No atual momento ... </p>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-
-               
                 <!-- Combos -->
                 <div role="tabpanel" class="tab-pane fade col-md-12" id="combos">
                   <div class="inside-sec blog"> 
@@ -1151,6 +1079,127 @@ table {
                   </div>
                 </div>
                 
+                
+               <!-- Equipamentos -->
+                <div role="tabpane2" class="tab-pane fade in" id="carregando">
+                  <div class="inside-sec"> 
+                    <!-- BIO AND SKILLS -->
+                    <h5 class="tittle">Todos os Itens e Equipamentos</h5>
+                  
+                    <div class="panel-group accordion gray-bg padding-20 padding-top-50 padding-bottom-50 accordion-style-2 " id="accordion-1"> 
+
+                        <!-- Accoding 1 -->
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2-1">Equipamentos de Combate </a> </h4>
+                        </div>
+                        <div id="collapse-2-1" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <div class="row">
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="equipamentos" contenteditable="true"> 
+                                <b>•  ARMADURA E ARMAS</b><br>
+                                - Cota de Aneis - Armadura Mágica (14 CA) - - - - - - - - - - Peso: 15 kg<br>
+                                <!-- <spam style="font-size: 8px;">Campo de Amortecimento se, desvantagem na furtividade</spam> -->
+                                - Espada Longa • Azaphyros (1d8 Dano Cortante | 1d10 com duas mãos) - - - - - - Peso: 2 kg<br>
+                                <spam style="font-size: 8px;"><b>Propriedade:</b> Versátil</spam><br><br>
+                                
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Accoding 2 -->
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2-2"  class="collapsed"> Recompesas da Campanha</a> </h4>
+                        </div>
+                        <div id="collapse-2-2" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row">
+                              
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="recompensas" contenteditable="true"> 
+                                 <b>Mochila de Explorador:<br>
+                                    - Ração e Água para 2 dias;<br>
+                                    - Armadilha de caçado;<br>
+                                    - Uma medalha de patente;<br>
+                                    - Roupas Comum;<br>
+                                    - Anotações sobre os procurados - Covil dos Ladrões;<br>
+                                    - Arcabus Quebrada;<br><br>
+                                  </b>
+                                    <b>PESO Total - 21 Kg</b>
+                                <br></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Accoding 3 -->
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2-3" class="collapsed"> Dinheiro • Vestes • Comidas</a> </h4>
+                        </div>
+                        <div id="collapse-2-3" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row">
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="recompensas" contenteditable="true"> 
+                                <b>
+                                  - Capa do Uniforme Militar;<br>
+                                  - P.O: 30<br>
+                                </b>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  
+                </div>
+                                
+                <!-- Anotações -->
+                <div role="tabpanel" class="tab-pane fade col-md-12" id="anotacoes">
+                  <div class="inside-sec blog"> 
+                    <!-- BIO AND SKILLS -->
+                    <h5 class="tittle">História</h5>
+                    
+                    <!-- Blog -->
+                    <article class="blog-post width-100 padding-25">
+                      <!-- BLOG DETAIL -->
+                      <h4 class="font-normal">Viagens e Missões</h4>
+                      <span class="post-bt">Cidade Atual: <span class="text-color-primary">Amastácia</span></span>
+                      <ul class="post-info">
+                        <li> <i class="fa fa-bookmark-o"></i>HIstórias e Anotações Importantes</li>
+                        <li>  </li>
+                      </ul>
+
+                      <h5 class="margin-top-30 margin-bottom-0">Recurso: Patente Militar</h5>
+                      <p>
+                        Você tem uma patente de sua carreira como soldado. Soldados leais a sua organização ainda reconhecem sua autoridade e influência, prestam deferência a você se de patente menor. Você pode usar sua influência para emprestar cavalos e equipamentos simples, ou ter acesso a fortaleza e acampamentos militares onde sua patente é reconhecida.
+                      </p><br>
+                      <div class="row">
+                        <h5 class="margin-top-30 margin-bottom-0">Primeira missão em Onur</h5>
+                        <div class="col-md-12"><img class="img-responsive margin-top-10" src="../images/mapa-de-onur.jpg" title="Mapa de Onur" alt="Mapa de Onur"></div>
+                      </div>
+                      <!-- <h6 class="margin-top-30 margin-bottom-0">Anotações do meu pai</h6> -->
+                      <div class="row">
+                        <h5 class="margin-top-30 margin-bottom-0">Nas Terras de Amastácia</h5>
+                        <div class="col-md-12"><img class="img-responsive margin-top-10" src="../images/mapa-de-amastacia.jpg" title="Mapa de Amastacia - Luan" alt="Mapa de Amastacia - Luan"></div>
+                      </div>
+                      <div class="row">
+                        <h6 class="margin-top-30 margin-bottom-0">Anotações Importantes</h6>
+                        <p id="anotacao" contenteditable="true">• No atual momento ... </p>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+           
               </div>
             </div>
 
@@ -1175,164 +1224,16 @@ table {
 
 <div id="resume" class="tab-mostrar fade in"> 
   
-<!-- JavaScripts --> 
+ <!-- JavaScripts --> 
+<script src="script.js"></script>
 <script src="../js/vendors/jquery/jquery.min.js"></script> 
 <script src="../js/vendors/bootstrap.min.js"></script> 
 <script src="../js/vendors/owl.carousel.min.js"></script> 
 <script src="../js/vendors/jquery.isotope.min.js"></script> 
 <script src="../js/main.js"></script> 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.portfolio-filter .filter');
-    const items = document.querySelectorAll('.portfolio-item');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // 1. Pega o valor do filtro e limpa o ponto (ex: ".truques" -> "truques")
-            let filterValue = this.getAttribute('data-filter').replace('.', '');
-
-            // 2. Remove a classe de destaque de todos os botões e coloca no atual
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            // 3. Lógica de Esconder/Mostrar corrigida
-            items.forEach(item => {
-                // Se for "all", mostra tudo
-                if (filterValue === 'all') {
-                    item.style.display = 'block';
-                } 
-                // Se o item tiver a classe correspondente ao filtro, mostra
-                else if (item.classList.contains(filterValue)) {
-                    item.style.display = 'block';
-                } 
-                // Se não for nenhum dos dois, esconde obrigatoriamente
-                else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
-});
-</script>
-
-<!-- Begin Map Script--> 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 <script src="../js/vendors/map.js"></script>
-
-
-<script>
-function resetPV() {
-  const pv = document.getElementById("pv_atual");
-
-  pv.innerText = "65";
-  localStorage.setItem("pv_atual", "65");
-}
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const campos = document.querySelectorAll("[contenteditable=true]");
-
-  campos.forEach(campo => {
-    const id = campo.id;
-
-    if (!id) return; // segurança
-
-    // carregar valor salvo
-    const salvo = localStorage.getItem(id);
-    if (salvo) {
-      campo.innerText = salvo;
-    }
-
-    // salvar ao editar
-    campo.addEventListener("input", () => {
-      localStorage.setItem(id, campo.innerText);
-    });
-  });
-});
-</script>
-<script>
-    // 1. Bloqueia o clique com o botão direito (Menu de Contexto)
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // 2. Bloqueia atalhos de teclado comuns para desenvolvedores
-    document.onkeydown = function(e) {
-        // Bloqueia F12
-        if(e.keyCode == 123) {
-            return false;
-        }
-        // Bloqueia Ctrl+Shift+I (Inspecionar)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-            return false;
-        }
-        // Bloqueia Ctrl+Shift+C (Selecionar elemento)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-            return false;
-        }
-        // Bloqueia Ctrl+Shift+J (Console)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-            return false;
-        }
-        // Bloqueia Ctrl+U (Exibir código fonte)
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-            return false;
-        }
-    }
-</script>
-
-<script>
-
-const checkboxes = document.querySelectorAll(".magia")
-
-checkboxes.forEach(box => {
-
-const salvo = localStorage.getItem(box.id)
-
-if(salvo === "true"){
-box.checked = true
-}
-
-box.addEventListener("change", () => {
-localStorage.setItem(box.id, box.checked)
-})
-
-})
-
-</script>
-
-<script>
-
-const linhas = document.querySelectorAll(".linha-magia")
-
-linhas.forEach(linha => {
-
-const max = Number(linha.dataset.max)
-const checkboxes = linha.querySelectorAll(".magia")
-const restante = linha.querySelector(".restante")
-
-function atualizar(){
-
-let usados = 0
-
-checkboxes.forEach(box=>{
-if(box.checked){
-usados += Number(box.dataset.cost)
-}
-})
-
-restante.innerText = max - usados
-
-}
-
-checkboxes.forEach(box=>{
-box.addEventListener("change", atualizar)
-})
-
-atualizar()
-
-})
-
-</script>
 
 
 </body>
