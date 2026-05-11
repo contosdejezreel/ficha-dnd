@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/responsive.css">
 <link rel="stylesheet" href="bronze.css">
+<link rel="stylesheet" href="estilos.css">
+
 
 <!-- FontsOnline -->
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -39,6 +41,45 @@ table {
 
 </head>
 <body>
+  <!-- MODAL RESISTÊNCIA A MORTE -->
+    <div id="modalMorte" class="modal-overlay">
+
+      <div class="modal-box">
+
+        <button class="modal-close" onclick="resultadoMorte(false)">✖</button>
+
+        <div class="modal-content">
+
+          <div class="modal-icon">⚠</div>
+
+          <h3 class="modal-title">
+            <b style="color: red;">ESTADO CRÍTICO</b>
+          </h3>
+
+          <p class="modal-text" id="textoMorte">
+            <b style="color: #ddd;">Você está à beira da morte. 
+            Faça um teste de resistência para sobreviver.</b>
+          </p>
+          <div id="botoesMorte">
+
+            <button class="btn-anim resistir" onclick="resultadoMorte(true)">
+              <span>✔ Resistir</span>
+            </button>
+
+            <button class="btn-anim falhar" onclick="resultadoMorte(false)">
+              <span>✖ Falhar</span>
+            </button>
+
+          </div>
+
+          <button id="btnContinuar" style="display:none;" onclick="fecharModalMorte()">
+            Continuar
+          </button>
+        </div>
+
+      </div>
+
+    </div>
 
 <!-- Page Wrapper -->
 <div id="wrap"> 
@@ -68,7 +109,7 @@ table {
                 
                 <!-- Professional Details -->
                 <h5 class="tittle">Personagem - Einar</h5>
-                <img src="einar.png" class="img-responsive" alt="Einar">
+                <img src="einahr.png" class="img-responsive" alt="Einar">
                  <!-- Academic Background -->
                   <div class="inside-sec margin-top-30 accordion" id="accordion"> 
                     <!-- Academic Background -->
@@ -100,9 +141,9 @@ table {
                               <h5 class="tittle" style="border-bottom: none; text-align: center;"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseEXP" class="collapsed">Nível 6 - EXP</a></h5>
                               <!-- Exp -->
                                 
-                              <div class="col-sm-12" title="15%">
+                              <div class="col-sm-12" title="54%">
                                 <div class="progress">
-                                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 32%;"> <span class="sr-only">15% Complete</span> </div>
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 54%;"> <span class="sr-only">54% Complete</span> </div>
                                 </div>
                               </div>
                               <div id="collapseEXP" class="panel-collapse collapse">
@@ -203,27 +244,49 @@ table {
                       <div  class="pricing padding-20 padding-bottom-20" >
                         <h4>Pontos de Vida</h4>
                         <p style="padding-top: 0px; ">Por nível: 1d10 + MOD Con • Total 68</p>
-                        <div class=" exp-history"> 
-                          <div class="exp">
-                            <div class="media-body">
-                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span id="pv_atual" contenteditable="true" style="font-size: 80px;">68</span></a>  <button onclick="resetPV()" style="border: none;">🔄</button></h6>
-                              <div class="media-left"><span class="sun">Pontos de Vida Atual</span></div>
-                              <div id="collapsePV" class="panel-collapse collapse row">
-                                <div class="col-sm-6">
-                                  <h6>17 PV</h6>
-                                  <p>1/4 Teste de Cansaço</p>
+                        <div class="exp-history"> 
+                              <input type="text" id="valorPV" class="custom-btn-calculadora" placeholder="TOTAL"><button class="custom-btn btn-12"><span onclick="alterarPV()">Calcular</span><span>Dano | Cura</span></button>
+                              <div class="exp">
+                                <div class="media-body">
+                                  <h6><a data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span  id="pvAtual" style="font-size: 80px;">68</span></a> <button onclick="resetPV()" style="border: none;" >🔄</button></h6>
+
+                                  <div class="media-left"><span class="sun">Pontos de Vida Atual</span></div>
+                                  <br><br>
+                                    <div id="barraContainer">
+                                      <div id="barraVida"></div>
+                                    </div>
+                                  <div id="collapsePV" class="panel-collapse collapse row">
+                                  
+                                    <div class="col-sm-6">
+                                      <h6>12 PV</h6>
+                                      <p>1/4 Teste de Cansaço</p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <h6>-5 PV</h6>
+                                      <p>Resistência a Morte</p>
+                                    </div>
+                                    
+                                  </div>
                                 </div>
-                                <div class="col-sm-6">
-                                  <h6>-5 PV</h6>
-                                  <p>Resistência a Morte</p>
-                                </div>
-                                
                               </div>
+                           <div><span id="pv_temp" contenteditable="true"  class="sun" style="width: 205px; font-size: 18px;">P.V Temporário: <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div><br>
+                              <div class="col-sm-12">
+
+                                <div>
+
+                                <button class="btnpv" onclick="tempPV(-10)">-10</button>
+                                <button class="btnpv" onclick="tempPV(-5)">-5</button>
+                                <button class="btnpv" onclick="tempPV(-1)">-1</button>
+
+                                <button class="btnpv" onclick="tempPV(1)">+1</button>
+                                <button class="btnpv" onclick="tempPV(5)">+5</button>
+                                <button class="btnpv" onclick="tempPV(10)">+10</button>
+
+                                </div>
+                              </div>
+                              <br><br>
                             </div>
                           </div>
-                          <div><span class="sun" style="width: 205px; font-size: 27px;">P.V Temporário: <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div>
-                        </div>
-                      </div>
                         <!-- Exp -->
                     </div>
                   </div>                      
@@ -1072,177 +1135,24 @@ table {
     </div>
   </footer>
   <!--  End Footer --> 
-  
+
 </div>
-<!-- End Page Wrapper --> 
+
 <div id="resume" class="tab-mostrar fade in"> 
   
-<!-- JavaScripts --> 
+ <!-- JavaScripts --> 
+<script src="script.js"></script>
 <script src="../js/vendors/jquery/jquery.min.js"></script> 
 <script src="../js/vendors/bootstrap.min.js"></script> 
 <script src="../js/vendors/owl.carousel.min.js"></script> 
 <script src="../js/vendors/jquery.isotope.min.js"></script> 
 <script src="../js/main.js"></script> 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.portfolio-filter .filter');
-    const items = document.querySelectorAll('.portfolio-item');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // 1. Pega o valor do filtro e limpa o ponto (ex: ".truques" -> "truques")
-            let filterValue = this.getAttribute('data-filter').replace('.', '');
-
-            // 2. Remove a classe de destaque de todos os botões e coloca no atual
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            // 3. Lógica de Esconder/Mostrar corrigida
-            items.forEach(item => {
-                // Se for "all", mostra tudo
-                if (filterValue === 'all') {
-                    item.style.display = 'block';
-                } 
-                // Se o item tiver a classe correspondente ao filtro, mostra
-                else if (item.classList.contains(filterValue)) {
-                    item.style.display = 'block';
-                } 
-                // Se não for nenhum dos dois, esconde obrigatoriamente
-                else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
-});
-</script>
-
-<!-- Begin Map Script--> 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
 <script src="../js/vendors/map.js"></script>
 
 
-<script>
-function resetPV() {
-  const pv = document.getElementById("pv_atual");
-
-  pv.innerText = "68";
-  localStorage.setItem("pv_atual", "68");
-}
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const campos = document.querySelectorAll("[contenteditable=true]");
-
-  campos.forEach(campo => {
-    const id = campo.id;
-
-    if (!id) return; // segurança
-
-    // carregar valor salvo
-    const salvo = localStorage.getItem(id);
-    if (salvo) {
-      campo.innerText = salvo;
-    }
-
-    // salvar ao editar
-    campo.addEventListener("input", () => {
-      localStorage.setItem(id, campo.innerText);
-    });
-  });
-});
-</script>
-<script>
-    // 1. Bloqueia o clique com o botão direito (Menu de Contexto)
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // 2. Bloqueia atalhos de teclado comuns para desenvolvedores
-    document.onkeydown = function(e) {
-        // Bloqueia F12
-        if(e.keyCode == 123) {
-            return false;
-        }
-        // Bloqueia Ctrl+Shift+I (Inspecionar)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-            return false;
-        }
-        // Bloqueia Ctrl+Shift+C (Selecionar elemento)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-            return false;
-        }
-        // Bloqueia Ctrl+Shift+J (Console)
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-            return false;
-        }
-        // Bloqueia Ctrl+U (Exibir código fonte)
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-            return false;
-        }
-    }
-</script>
-
-<script>
-
-const checkboxes = document.querySelectorAll(".magia")
-
-checkboxes.forEach(box => {
-
-const salvo = localStorage.getItem(box.id)
-
-if(salvo === "true"){
-box.checked = true
-}
-
-box.addEventListener("change", () => {
-localStorage.setItem(box.id, box.checked)
-})
-
-})
-
-</script>
-
-<script>
-
-const linhas = document.querySelectorAll(".linha-magia")
-
-linhas.forEach(linha => {
-
-const max = Number(linha.dataset.max)
-const checkboxes = linha.querySelectorAll(".magia")
-const restante = linha.querySelector(".restante")
-
-function atualizar(){
-
-let usados = 0
-
-checkboxes.forEach(box=>{
-if(box.checked){
-usados += Number(box.dataset.cost)
-}
-})
-
-restante.innerText = max - usados
-
-}
-
-checkboxes.forEach(box=>{
-box.addEventListener("change", atualizar)
-})
-
-atualizar()
-
-})
-
-</script>
-
-
 </body>
 </html>
-
-
-
-
-
 
 
