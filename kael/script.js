@@ -144,10 +144,10 @@ barra.style.background = "deepskyblue"
 
 }else{
 
-if(porcentagem > 90){
+if(porcentagem > 68){
 barra.style.background = "green"
 }
-else if(porcentagem > 45){
+else if(porcentagem > 34){
 barra.style.background = "orange"
 }
 else{
@@ -175,7 +175,7 @@ function verificarMorte(){
 let atual = Number(document.getElementById("pvAtual").innerText)
 
 // só ativa uma vez
-if(atual <= -(pvMax * 0.04) && !emEstadoCritico){
+if(atual <= -(pvMax * 0.1) && !emEstadoCritico){
 
 emEstadoCritico = true
 tentativasMorte = 0
