@@ -235,7 +235,6 @@
                         <h4>Pontos de Vida</h4>
                         <p style="padding-top: 0px; ">Por nível: 1d8 + mod Con • Total 60</p>
                         <div class=" exp-history"> 
-                           <div class="exp-history"> 
                               <input type="text" id="valorPV" class="custom-btn-calculadora" placeholder="TOTAL"><button class="custom-btn btn-12"><span onclick="alterarPV()">Calcular</span><span>Dano | Cura</span></button>
                               <div class="exp">
                                 <div class="media-body">
@@ -253,14 +252,14 @@
                                       <p>1/4 Teste de Cansaço</p>
                                     </div>
                                     <div class="col-sm-6">
-                                      <h6>-5 PV</h6>
+                                      <h6>-6 PV</h6>
                                       <p>Resistência a Morte</p>
                                     </div>
                                     
                                   </div>
                                 </div>
                               </div>
-                           <div><span id="pv_temp" contenteditable="true"  class="sun" style="width: 205px; font-size: 18px;">P.V Temporário: <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div><br>
+                            <div><span id="pv_temp" contenteditable="true"  class="sun" style="width: 205px; font-size: 18px;">P.V Temporário: <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div><br>
                               <div class="col-sm-12">
 
                                 <div>
@@ -276,12 +275,11 @@
                                 </div>
                               </div>
                               <br><br>
-                            </div>
                           </div>
+                      </div>
                         <!-- Exp -->
                     </div>
                   </div>                      
-                </div> 
                 </div> 
 
                   <!-- Bônus e Testes -->
@@ -495,10 +493,9 @@
                           <div class="exp">
                             <div class="media-left"> <span class="sun">Druída • Nvl 1 </span> </div>
                             <div class="media-body"> 
-                              <!-- COmpany Logo -->
-                              <div class="company-logo"> </div>
-                                <a href="#magias" aria-controls="magias" role="tab" data-toggle="tab">
-                                <h6>Conjuração</h6>
+                                 <div class="company-logo"> </div>
+                                  <a href="#magias" aria-controls="magias" role="tab" data-toggle="tab">
+                                  <h6>Conjuração</h6>
                                 <!-- <p>CM Comercio e Serviços Digitais</p> -->
                                 <p class="margin-top-10"> 
                                   No nível atual, tem 10 Feitiços Preparados 4/3/3 
@@ -1682,32 +1679,37 @@
       <p>© Copyright Contos de Jezreel. All right reserved.</p>
     </div>
   </footer>
-  <!-- End Content --> 
+  <!-- End Footer --> 
   
-  <!-- Footer -->
-  <footer class="footer" style="padding-top: 219px;">
-    <div class="rights">
-      <p>© Copyright Contos de Jezreel. All right reserved.</p>
-    </div>
-  </footer>
-  <!--  End Footer --> 
-
 </div>
 
-<div id="resume" class="tab-mostrar fade in"> 
-  
- <!-- JavaScripts --> 
-<script src="script.js"></script>
-<script src="../js/vendors/jquery/jquery.min.js"></script> 
-<script src="../js/vendors/bootstrap.min.js"></script> 
-<script src="../js/vendors/owl.carousel.min.js"></script> 
-<script src="../js/vendors/jquery.isotope.min.js"></script> 
-<script src="../js/main.js"></script> 
+   <div id="resume" class="tab-mostrar fade in"> 
+     
+    <!-- JavaScripts --> 
+    <script src="script.js"></script>
+    <script src="../js/vendors/jquery/jquery.min.js"></script> 
+    <script src="../js/vendors/bootstrap.min.js"></script> 
+    <script src="../js/vendors/owl.carousel.min.js"></script> 
+    <script src="../js/vendors/jquery.isotope.min.js"></script> 
+    <script src="../js/main.js"></script>
+    
+    <!-- Begin Map Script--> 
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
+    <script src="../js/vendors/map.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
-<script src="../js/vendors/map.js"></script>
+    <div id="gameOver" class="gameover-overlay">
+
+      <div class="gameover-box">
+        <div class="skull">💀</div>
+        <h4 style="color: #fff;">VOCÊ MORREU!</h4>
+        <button onclick="reviver()">RECOMEÇAR</button>
+      </div>
+
+    </div>
 
 
-</body>
+  </body>
 </html>
+
+
 
