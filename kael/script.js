@@ -144,10 +144,10 @@ barra.style.background = "deepskyblue"
 
 }else{
 
-if(porcentagem > 68){
+if(porcentagem > 50){
 barra.style.background = "green"
 }
-else if(porcentagem > 34){
+else if(porcentagem > 30){
 barra.style.background = "orange"
 }
 else{
