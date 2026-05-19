@@ -1,0 +1,45 @@
+
+        .exp-history a {
+          color: #CE8946;
+      }
+      .isop-filter li.active a {
+          background: #CE8946;
+      }
+      .isop-filter li a:hover {
+          background: #CE8946;
+          color: #fff;
+      }
+      .progress-bar {
+          background: #CE8946;
+      }
+
+      .side-bar .personal-info li a {
+          color: #CE8946;
+      }
+      .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+          color: #fff;
+          background-color: #CE8946;
+      }
+      .portfolio-filter li:hover {
+          background: #CE8946;
+          color: #fff;
+      }
+      .portfolio-filter li.active {
+          background: #CE8946;
+          color: #fff;
+          border: 1px solid #CE8946;
+      }
+      .accordion-style-2 .panel-default > .panel-heading a {
+          color: #CE8946;
+      }
+      .accordion-style-2 .panel-default > .panel-heading .panel-title a:before {
+          background: #CE8946;
+          border-color: #CE8946;
+      }
+      .pricing-table.style-1 .cta-button .btn {
+          background: #CE8946;
+          color: #fff;
+          
+      }
+
+
