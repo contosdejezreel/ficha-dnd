@@ -1,4 +1,4 @@
-const pvMax = 68
+const pvMax = 79
 
 const campo = document.getElementById("valorPV")
 
