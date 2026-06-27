@@ -1,1 +1,1319 @@
+<!doctype html>
+<html class="no-js" lang="pt-br">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="author" content="José Alexandre N Jr" />
+<!-- Document Title -->
+<title>Sussurro</title>
+<link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon">
+<!-- StyleSheets -->
+<link rel="stylesheet" href="../css/ionicons.min.css">
+<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="bronze.css">
+<link rel="stylesheet" href="estilos.css">
+
+
+<!-- FontsOnline -->
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+<!-- JavaScripts -->
+<script src="../js/vendors/modernizr.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+</head>
+<body>
+  <!-- MODAL RESISTÊNCIA A MORTE -->
+    <div id="modalMorte" class="modal-overlay">
+
+      <div class="modal-box">
+
+        <button class="modal-close" onclick="resultadoMorte(false)">✖</button>
+
+        <div class="modal-content">
+
+          <div class="modal-icon">⚠</div>
+
+          <h3 class="modal-title">
+            <b style="color: red;">ESTADO CRÍTICO</b>
+          </h3>
+
+          <p class="modal-text" id="textoMorte">
+            <b style="color: #ddd;">Você está à beira da morte. 
+            Faça um teste de resistência para sobreviver.</b>
+          </p>
+          <div id="botoesMorte">
+
+            <button class="btn-anim resistir" onclick="resultadoMorte(true)">
+              <span>✔ Resistir</span>
+            </button>
+
+            <button class="btn-anim falhar" onclick="resultadoMorte(false)">
+              <span>✖ Falhar</span>
+            </button>
+
+          </div>
+
+          <button id="btnContinuar" style="display:none;" onclick="fecharModalMorte()">
+            Continuar
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+<!-- Page Wrapper -->
+<div id="wrap"> 
+  
+  
+  <!-- End Header --> 
+  
+  <main class="cd-main-content">
+    <div id="content" class="bg">
+      <div class="resume">
+        <div class="container"> 
+          <!-- TOP HEAD -->
+          <div class="top-head">
+            <div class="row">
+              <div class="col-sm-6">
+                <h4> </h4>
+                <Br></Br> </div>
+            </div>
+          </div>
+          
+          <!-- Resume -->
+          <div class="row"> 
+            
+            <!-- COMBATE -->
+            <div class="col-md-4">
+              <div class="side-bar"> 
+                
+                <!-- Professional Details -->
+                <h5 class="tittle">Character • Sussurro</h5>
+                <img src="tabaxi.png" class="img-responsive" alt="Moriel Sussurro">
+                 <!-- Academic Background -->
+                  <div class="inside-sec margin-top-30 accordion" id="accordion"> 
+                    <!-- Academic Background -->
+                    <h5 class="tittle" style="border-bottom: none;">Classe e Raça</h5>
+                    <div class="padding-30 exp-history" style="border-bottom: 1px solid #e6e6e6;"> 
+                      
+                      <!-- Wordpress Developer -->
+                      <div class="exp" >
+                        <div class="media-body">
+                           <!-- COmpany Logo -->
+                              <h6 style="text-transform: none;"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseAnt" class="collapsed">Tabaxi, Forasteira </a></h6>
+                              <!-- Skillls Text -->
+                              <div id="collapseAnt" class="panel-collapse collapse">
+                                <div class="panel-body" style="padding-top: 0px;">
+                                  <p>
+                                    <b>ANTECENDENTES •</b>  Você é <b>Forasteira</b>.<br>
+                                    <br><b>IDIOMA •</b> .<br>
+                                    <br><b>TRAÇOS RACIAIS •</b> Ao descobrir:<br><b>• Agilidade Felina -</b> Seus reflexos e agilidade permitem que você se mova com uma explosão de velocidade. Quando você se move em seu turno de combate, você pode dobrar seu deslocamento até o fim do turno. Uma vez que você usar este traço, não poderá usá-lo novamente até tenha se movido 0 metro em um de seus turnos.<br><b>• Garras Felinas -</b>Você pode usar suas garras para 
+desferir golpes desarmados. Quando você acerta com 
+elas, o golpe causa dano cortante igual a ldó + seu 
+modificador de Força, ao invés do dano contundente 
+normal para um golpe desarmado.<br><b>Visão no Escuro -</b>Você consegue enxergar até
+18 metros na meia-luz como se fosse luz plena e,
+na escuridão, como se fosse meia-luz. Na escuridão 
+você só consegue discernir tons de cinza<br>
+                                  </p>
+                                </div>
+                              </div> <br>
+                              <p><b>Ladina</b> - Total nvl 3 </p>
+                              <div class="media-left"><span class="sun">Trapaceira Arcana</span></div>
+                        </div><br><br>
+                        <!-- exp por nível -->
+                        <div class="panel-group accordion ">
+                          <div class="panel panel-default">
+                            <div class="row"> 
+                              <h5 class="tittle" style="border-bottom: none; text-align: center;"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseEXP" class="collapsed">Nível 3 - EXP</a></h5>
+                              <!-- Exp -->
+                                
+                              <div class="col-sm-12" title="1%">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 1%;"> <span class="sr-only">1% Complete</span> </div>
+                                </div>
+                              </div>
+                              <div id="collapseEXP" class="panel-collapse collapse">
+                                <div class="panel-body" style="padding-top: 0px;">
+                                  <p style="text-align: center;">
+                                    <b>1%</b> • <b>600 - 900</b>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>                      
+                        </div>
+                      </div> 
+                      
+                    </div>
+                  </div>
+                  <ul class="personal-info accordion"  id="accordion">
+                    <li><b style="font-size: 28px;">ATRIBUTOS</b><br>
+                      <p> <span></span> </p>
+                    </li><br><br>
+                    <li>
+                      <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseFor" class="collapsed"> <span> For 11</span><b>+0</b> </a></p>
+                        <!-- Skillls Text -->
+                        <div id="collapseFor" class="panel-collapse collapse">
+                          <div class="panel-body" style="padding-top: 0px;">
+                            <p>
+                              <b>Força -</b> Poder corporal, capacidade atlética e pura e simples força bruta. Testes Exemplo: Forçar uma porta, quebrar grilhões, se manter agarrado em um veículo, derrubar algo, segurar algo, trabalho de forja pesada.<br>
+                              <b> • Atletismo</b> (FOR + Prof = <b style="font-size: 15px;">+2</b>)<br><i style="font-size: 12px;"> Feitos de força, como escalar, saltar, correr e nadar.</i><br>
+                            </p>
+                          </div>
+                        </div>    
+                    </li>
+                    <br>
+                    <li>
+                      <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseCon" class="collapsed"> <span> Con 12</span><b>+1</b> </a></p>
+                        <!-- Skillls Text -->
+                        <div id="collapseCon" class="panel-collapse collapse">
+                          <div class="panel-body" style="padding-top: 0px;">
+                            <p>
+                              <b>Constituição -</b> Define a saúde, vigor e energia vital. Testes Exemplo: Prender respiração, trabalhar horas seguidas, ficar sem dormir, ficar sem comida e água, virar uma caneca de cerveja de uma vez só.
+                            </p>
+                          </div>
+                        </div>  
+                    </li>
+                    <br>
+                    <li>
+                      <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseDes" class="collapsed"> <span> Des 17</span><b>+3</b> </a></p>
+                        <!-- Skillls Text -->
+                        <div id="collapseDes" class="panel-collapse collapse">
+                          <div class="panel-body" style="padding-top: 0px;">
+                            <p>
+                              <b>Destreza -</b> Mede agilidade, reflexos e equilíbrio. Testes Exemplo: Controlar um veículo, abrir uma fechadura, desarmar uma armadilha, amarrar um prisioneiro, escapar de amarras, tocar um instrumento de corda, criar um objeto delicado<br>
+                              <b> • Furtividade</b> (DES + Prof = <b style="font-size: 15px;">+5</b>)<br><i style="font-size: 12px;">  Esconderse de oponentes, não fazer barulho, etc.</i><br>
+                              <b> • Acrobacias</b> (DES + Prof = <b style="font-size: 15px;">+5</b>)<br><i style="font-size: 12px;"> Feitos de agilidade como se equilibrar numa corda.</i><br>
+                              <b> • Prestidigitação</b> (DES + Prof = <b style="font-size: 15px;">+5</b>)<br><i style="font-size: 12px;"> Feitos de agilidade como se equilibrar numa corda.</i><br>
+                            </p>
+                          </div>
+                        </div>  
+                    </li>
+                    <br>
+                    <li>
+                      <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseInt" class="collapsed"> <span> Int 15</span><b>+2</b> </a></p>
+                        <!-- Skillls Text -->
+                        <div id="collapseInt" class="panel-collapse collapse">
+                          <div class="panel-body" style="padding-top: 0px;">
+                            <p>
+                              <b>Inteligência - </b>Acuidade mental, capacidade de memória e a habilidade de usar a razão.Testes Exemplo: Comunicar-se por mímica, estimar um valor, montar um disfarce, falsificar, lembrar-se de conhecimento, vencer um jogo de perícia.
+                              <b> • Investigação</b> (Mod INT = <b style="font-size: 15px;">+4</b>)<br><i style="font-size: 12px;">  Afiar os sentidos em geral; ouvir do outro lado de porta, notar uma emboscada, sentir cheiro de gás, etc.</i><br>
+                            </p>
+                          </div>
+                        </div>  
+                    </li>
+                    <br>
+                    <li>
+                      <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseSab" class="collapsed"> <span> Sab 10</span><b>+0</b> </a></p>
+                        <!-- Skillls Text -->
+                        <div id="collapseSab" class="panel-collapse collapse">
+                          <div class="panel-body" style="padding-top: 0px;">
+                            <p>
+                              <b>Sabedoria - </b> Mede intuição e percepção do mundo à sua volta. Testes Exemplo: Ter uma intuição sobre uma situação, determinar a verdadeira natureza de algo.<br>
+                              <b> • Percepção</b> (Mod SAB = <b style="font-size: 15px;">+2</b>)<br><i style="font-size: 12px;">  Afiar os sentidos em geral; ouvir do outro lado de porta, notar uma emboscada, sentir cheiro de gás, etc.</i><br>
+                              <b> • Sobrevivência</b> (SAB + Prof = <b style="font-size: 15px;">+2</b>)<br><i style="font-size: 12px;">  Agir com tato e etiqueta, e atos de convencer as pessoas usando de boa fé.</i><br>
+                            </p>
+                          </div>
+                        </div>  
+                    </li>
+                    <br>
+                    <li>
+                      <p class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseCar" class="collapsed"> <span> Car 10</span><b>+0</b> </a></p>
+                        <!-- Skillls Text -->
+                        <div id="collapseCar" class="panel-collapse collapse">
+                          <div class="panel-body" style="padding-top: 0px;">
+                            <p>
+                              <b>Carisma -</b> Capacidade de interagir bem com outros, incluindo fatores como confiança e eloquência.Testes Exemplo: Encontrar a melhor pessoa para descobrir algo, se misturar ao povo para conseguir informação.
+                            </p>
+                          </div>
+                        </div>  
+                    </li>
+                  </ul>
+
+                    <!-- exp por nível -->
+                <div class="mobile-pv panel-group padding-20 accordion"  id="accordion" style="border-bottom: 1px solid #e6e6e6;">
+                  <div class="panel panel-default">
+                    <div class="row"> 
+                      <div  class="pricing padding-20 padding-bottom-20" >
+                        <h4>Pontos de Vida</h4>
+                        <p style="padding-top: 0px; ">Por nível: 1d8 + MOD Con • Total </p>
+                        <div class="exp-history"> 
+                              <input type="text" id="valorPV" class="custom-btn-calculadora" placeholder="TOTAL"><button class="custom-btn btn-12"><span onclick="alterarPV()">Calcular</span><span>Dano | Cura</span></button>
+                              <div class="exp">
+                                <div class="media-body">
+                                  <h6><a data-toggle="collapse" data-parent="#accordion" href="#collapsePV" class="collapsed"> <span  id="pvAtual" style="font-size: 80px;">27</span></a> <button onclick="resetPV()" style="border: none;" >🔄</button></h6>
+
+                                  <div class="media-left"><span class="sun">Pontos de Vida Atual</span></div>
+                                  <br><br>
+                                    <div id="barraContainer">
+                                      <div id="barraVida"></div>
+                                    </div>
+                                  <div id="collapsePV" class="panel-collapse collapse row">
+                                  
+                                    <div class="col-sm-6">
+                                      <h6>13 PV</h6>
+                                      <p>1/4 Teste de Cansaço</p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <h6>-5 PV</h6>
+                                      <p>Resistência a Morte</p>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                           <div><span id="pv_temp" contenteditable="true"  class="sun" style="width: 205px; font-size: 18px;">P.V Temporário: <b id="pv_temp" contenteditable="true">○ - ○ - ○</b></span></div><br>
+                              <div class="col-sm-12">
+
+                                <div>
+
+                                <button class="btnpv" onclick="tempPV(-10)">-10</button>
+                                <button class="btnpv" onclick="tempPV(-5)">-5</button>
+                                <button class="btnpv" onclick="tempPV(-1)">-1</button>
+
+                                <button class="btnpv" onclick="tempPV(1)">+1</button>
+                                <button class="btnpv" onclick="tempPV(5)">+5</button>
+                                <button class="btnpv" onclick="tempPV(10)">+10</button>
+
+                                </div>
+                              </div>
+                              <br><br>
+                            </div>
+                          </div>
+                        <!-- Exp -->
+                    </div>
+                  </div>                      
+                </div> 
+
+                  <!-- Bônus e Testes -->
+                  <div class="inside-sec margin-top-30 accordion"  id="accordion">  
+                    <h4 class="tittle padding-20" style="border-bottom: none;">Bônus e Testes</h4>
+                    <div class="padding-30 exp-history" style="margin-top: -15px;"> 
+
+                      <!-- Iniciativa -->
+                      <div class="exp">
+                        <div class="media-body">
+                          <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseIni" class="collapsed"> <span style="font-size: 22px; text-transform: none;">Iniciativa +5</span></a></h6>
+                          <div class="media-left"><span class="sun" style="width: 205px;">Bônus de Iniciativa</span></div>
+                          <p id="collapseIni" class="panel-collapse collapse">
+                            Esse é o Bônus que defini a sua reação diante de uma ação. Quanto maior a sua Destreza, maior é a sua agilidade em agir.
+                            <br><br>
+                            Deslocamento <B>9m</B>
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- C.A --> 
+                      <div class="exp">
+                        <div class="media-body">
+                          <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseCA" class="collapsed"> <span style="font-size: 22px;">C.A 14</span></a></h6>
+                          <div class="media-left"><span class="sun">Classe de Armadura</span></div>
+                          <p id="collapseCA" class="panel-collapse collapse">10 + MOD Des + Equip <br></p>
+                        </div>
+                      </div>
+                       
+                      <!-- Prof--> 
+                      <div class="exp">
+                        <div class="media-body">
+                          <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseProf" class="collapsed"> <span style="font-size: 22px;">Prof +2</span></a></h6>
+                          <div class="media-left"><span class="sun" style="width: 135px;">Bônus de Proficiência</span></div>
+                          <p id="collapseProf" class="panel-collapse collapse">Esse Bônus ajuda a somar nos ataques, dano, testes e as perícias que é proficiente.</p>
+                        </div>
+                      </div>
+                       
+                      <!-- C.D --> 
+                      <div class="exp">
+                        <div class="media-body">
+                          <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseCD" class="collapsed"> <span style="font-size: 22px;">C.D 12</span></a></h6>
+                          <div class="media-left"><span class="sun">Classe de Desafio</span></div>
+                          <p id="collapseCD" class="panel-collapse collapse">Nível de desagio que as suas magias apresenta contra o seus oponentes, ou seja, é necessario tirar mais que a sua CD para superar uma magia sua. O calculo para encontrar a <b>C.D é: 8 + MOD Int + Prof</b></p>
+                        </div>
+                      </div>
+                       
+                      <!-- Foco de Conjuração --> 
+                      <!-- <div class="exp">
+                        <div class="media-body">
+                          <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseFocoConj" class="collapsed"> <span style="font-size: 22px; text-transform: none;">Foco de Conjuração +1</span></a></h6>
+                          <div class="media-left"><span class="sun" style="width: 205px;">Cordas Élficas</span></div>
+                          <p id="collapseFocoConj" class="panel-collapse collapse">Sempre que utilizar o seu F.C - <b>F</b>oco de <b>C</b>onjuração, recebe o Bônus relacionado as habilidades. As <b>Cordas Élficas</b> permite receber <b>+1</b> nas jogadas de ATK e <b>+1</b> nas jogadas de Dano.</p>
+                        </div>
+                      </div> -->
+                       
+                       <!-- ATAQUE e Dano --> 
+                      <div class="exp">
+                        <div class="media-body">
+                          <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseBAM" class="collapsed"> <span style="font-size: 22px; text-transform: none;">Bônus de Ataque</span></a></h6>
+                          <div class="media-left"><span class="sun" style="width: 205px;">Bônus de Ataque</span></div>
+                          <p id="collapseBAM" class="panel-collapse collapse">
+                            Sempre que usar magia para <b>ATK</b>, o seu Bônus para acertar é:<br>
+                             • Chave de Conjuração <b>(MOD Int = +2)</b><br>
+                             • Proficiência <b>(+2)</b><br>
+                            Resultado para o acerto é <b>D20 + 4</b><br><br>
+                            Sempre que <b>ATK</b> sem magia, o seu Bônus para acertar é:<br>
+                             • Proficiência <b>(+2)</b><br>
+                             • Mod Destreza <b>(+3)</b><br>
+                            Resultado para o acerto é <b>D20 + 5 </b>
+                            </p>
+                        </div>
+                      </div>
+                       
+                      <!-- <div class="exp">
+                        <div class="media-body">
+                          <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseDano" class="collapsed"> <span style="font-size: 22px; text-transform: none;">B.D +5</span></a></h6>
+                          <div class="media-left"><span class="sun" style="width: 205px;">Bônus no Dano</span></div>
+                          <p id="collapseDano" class="panel-collapse collapse">
+                            Algumas magias usam o <b>Bônus no Dano</b> somado com o resultado do dado, exemplo:<br>
+                             • Misseis Mágicos<b> - cada dardo dá 1d4+B.D</b><br>
+                             </p>
+                        </div>
+                      </div> -->
+                         <!-- pERÍCIAS --> 
+                      <div class="exp">
+                        <div class="media-body">
+                          <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapsePer" class="collapsed"> <span style="font-size: 22px; text-transform: none;">Perícias</span></a></h6>
+                          <div class="media-left"><span class="sun" style="width: 205px;">Áreas de Especialização</span></div>
+                          <p id="collapsePer" class="panel-collapse collapse">
+                            Sua especialização lhe garante um <b>Bônus de Proficiência</b> + o Modificador de cada Perícia, são elas:<br>
+                            <b> • Percepção</b> (Mod SAB = <b style="font-size: 15px;">+2</b>)<br><i style="font-size: 12px;">  Afiar os sentidos em geral; ouvir do outro lado de porta, notar uma emboscada, sentir cheiro de gás, etc.</i><br>
+                            <b> • Sobrevivência</b> (SAB + Prof = <b style="font-size: 15px;">+2</b>)<br><i style="font-size: 12px;">  Agir com tato e etiqueta, e atos de convencer as pessoas usando de boa fé.</i><br>
+                            <b> • Furtividade</b> (DES + Prof = <b style="font-size: 15px;">+5</b>)<br><i style="font-size: 12px;">  Esconderse de oponentes, não fazer barulho, etc.</i><br>
+                            <b> • Acrobacias</b> (DES + Prof = <b style="font-size: 15px;">+5</b>)<br><i style="font-size: 12px;"> Feitos de agilidade como se equilibrar numa corda.</i><br>
+                            <b> • Prestidigitação</b> (DES + Prof = <b style="font-size: 15px;">+5</b>)<br><i style="font-size: 12px;"> Feitos de agilidade como se equilibrar numa corda.</i><br>
+                            <b> • Atletismo</b> (FOR + Prof = <b style="font-size: 15px;">+2</b>)<br><i style="font-size: 12px;"> Feitos de força, como escalar, saltar, correr e nadar.</i><br>
+                            <b> • Investigação</b> (Mod INT = <b style="font-size: 15px;">+4</b>)<br><i style="font-size: 12px;">  Afiar os sentidos em geral; ouvir do outro lado de porta, notar uma emboscada, sentir cheiro de gás, etc.</i><br>
+                          </p>
+                        </div>
+                      </div>
+
+                      
+                       
+                    </div>
+                  </div>
+                
+               
+                        
+
+              </div>
+            </div>
+            
+            <!-- CARACTERISTICAS DA CLASSE -->
+            <div class="col-md-8"> 
+              <!-- NAV LINKS -->          
+              <nav> 
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-tabis" aria-expanded="false"> <span class="tittle" style="font-size: 17px; color: #346abb;">CARACTERISTICAS DA CLASSE</span> <span class="fa fa-navicon icon-nav"></span> </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="nav-tabis">
+                  <ul class="isop-filter nav nav-pills">
+                    <li role="presentation" class="active"><a href="#habilidades" aria-controls="habilidades" role="tab" data-toggle="tab"><i class="icon-user"></i>Habilidades</a></li>
+                    <li role="presentation"><a href="#magias" aria-controls="magias" role="tab" data-toggle="tab"><i class="icon-book-open"></i>Magias</a></li>
+                    <li role="presentation"><a href="#carregando" aria-controls="carregando" role="tab" data-toggle="tab"><i class="icon-note"></i>Carga</a></li>
+                    <li role="presentation"><a href="#anotacoes" aria-controls="anotacoes" role="tab" data-toggle="tab"> <i class="icon-pencil"></i>Anotações</a></li>
+                    <!-- <li role="presentation"><a href="#combos" aria-controls="combos" role="tab" data-toggle="tab"> <i class="icon-rocket"></i>Combos</a></li> -->
+                  </ul>
+                </div>
+              </nav>
+              <!-- NAV LINKS END -->
+              <div class="tab-content"> 
+                
+                <!-- Habilidades -->
+                <div role="tabpanel" class="tab-pane fade in active"  id="habilidades">
+                  <div class="inside-sec"> 
+                    <!-- BIO AND SKILLS -->
+                    <h5 class="tittle" >HABILIDADES DA CLASSE</h5>
+                    <!-- <div class="exp padding-20">
+                        <div class="media-body">
+                          <p id="collapsepER" class="panel-collapse collapse">
+                            <b>• Nvl 1 • Adepto da Metamagia</b>
+                          </p>
+                        </div>
+                      </div> -->
+                    
+                    <!-- Blog -->
+                    <section class="about-me padding-top-10"> 
+<!--                       
+                      <div class="padding-20 inside-sec">
+                        <p> 
+                          Nvl 1 • <b>Estilo de Luta - Combate com Duas Armas</b> - Estilo de Luta - Combate com Duas Armas.<br><br>
+                          Nvl 4 • <b>Adepto Marcial - Superioridade d6</b> <br><b>Resposta:</b> Quando uma criatura erra um ataque corpo a corpo contra você, você pode usar uma Reação e gastar um Dado de Superioridade para fazer um ataque corpo a corpo com uma arma ou um Ataque Desarmado contra a criatura. Se acertar, adicione o Dado de Superioridade ao dano do ataque.<br>
+                          <b>Ataque de Precisão:</b> Quando você erra uma jogada de ataque, você pode gastar um Dado de Superioridade, rolar esse dado e adicionar o resultado à jogada de ataque, potencialmente fazendo com que o ataque acerte.<br>
+                          <i style="font-size: 10px;">CD = 8 + Prof + Mod DES = 14 - jogue no inicio do seu turno um d4 para definir quantas vezes pode usar essa habilidade.</i> 
+                        </p>
+                      </div> -->
+                  
+                      <div class="inside-sec margin-top-30 accordion"  id="accordion"> 
+                        <!-- Professional Experience -->
+                        <!-- <h5 class="tittle" style="border-top: 1px solid #e6e6e6; border-bottom: none;">HABILIDADES DA CLASSE</h5> -->
+                        
+                        <div class="padding-30 exp-history"> 
+                          <!-- html5 and css3 Developer -->
+                           <div class="exp">
+                            <div class="media-left"> <span class="sun">Ladina • Nvl 1 </span> </div>
+                            <div class="media-body"> 
+                              
+                              <!-- COmpany Logo -->
+                              <div class="company-logo"></div>
+                              <h6>Ataque Furtivo </h6>
+                              <p></p>
+                              <p><a  data-toggle="collapse" data-parent="#accordion" href="#collapseTeleporte" class="collapsed">Dano</a> </p>
+                              <p class="margin-top-10"> 
+                                Você sabe atacar sutilmente, explorando a distração 
+                                do inimigo. Uma vez por turno, ao atingir uma criatura 
+                                com uma jogada de ataque em que tem Vantagem com 
+                                uma arma com Acuidade ou uma arma à Distância, 
+                                você pode causar 1d6 pontos de dano adicional do tipo 
+                                de dano da arma.
+                              </p><br><br>
+                              <div id="collapseTeleporte" class="panel-collapse collapse row">
+                                <div class="col-sm-12">
+                                  <h6 style="text-transform: none;">Habilidade do Ataque | +2d6</h6>
+                                  <p>
+                                    Você não precisa ter Vantagem na jogada de ataque 
+                                    se pelo menos um de seus aliados estiver a até 1,5 me
+                                    tro do alvo, e o aliado não tem a condição Incapacitado 
+                                    e você não tem Desvantagem na jogada de ataque.
+                                    O dano adicional aumenta à medida que você ad
+                                    quire níveis de Ladino, conforme mostrado na coluna 
+                                    Ataque Furtivo da tabela Características de Ladino.
+                                  </p>
+                                </div>
+                                
+                                
+                              </div>
+                            </div>
+                          </div>
+                          
+
+                          <div class="exp">
+                            <div class="media-left"> <span class="sun">Ladina • Nvl 1<br></span> </div>
+                            <div class="media-body"> 
+                              
+                                <div class="company-logo"> </div>
+                                <h6>Especialista</h6>
+                                <!-- <p>Infuções Mágicas </p> -->
+                                <p></p>
+                                <p class="margin-top-10"> 
+                                  Você obtém Especialização (veja o glossário de regras) 
+em duas de suas perícias, à sua escolha, nas quais já 
+seja proficiente. Furtividade e Prestidigitação são reco
+mendadas se você tiver proficiência nelas.
+No nível 6 de Ladino, você obtém Especialização em 
+mais duas perícias nas quais já seja proficiente à sua 
+escolha.
+                                </p>
+                              
+                            </div>
+                          </div>
+                            <!-- Wordpress Developer -->
+                            <!-- Wordpress Developer -->
+                          <div class="exp">
+                            <div class="media-left"> <span class="sun">Ladina • Nvl 1<br></span> </div>
+                            <div class="media-body"> 
+                              
+                                <div class="company-logo"> </div>
+                                <h6>Gíria do Ladrão</h6>
+                                <!-- <p>Infuções Mágicas </p> -->
+                                <p></p>
+                                <p class="margin-top-10"> 
+                                 Você aprendeu vários idiomas nas comunidades onde 
+                                  usou seus talentos gatunos. Você conhece a Gíria dos 
+                                  Ladrões e outro idioma à sua escolha - Elfíco
+                                </p>
+                              
+                            </div>
+                          </div>
+                          
+                           <div class="exp">
+                            <div class="media-left"> <span class="sun">Ladina • Nvl 1 </span> </div>
+                            <div class="media-body"> 
+                              
+                              <!-- COmpany Logo -->
+                              <div class="company-logo"></div>
+                              <h6>Maestria em Arma </h6>
+                              <p></p>
+                              <p><a  data-toggle="collapse" data-parent="#accordion" href="#collapseFuncao" class="collapsed">Como Funciona</a> </p>
+                              <p class="margin-top-10"> 
+                                Seu treinamento com armas permite que você use 
+                                as propriedades de maestria de dois tipos de armas à 
+                                sua escolha com as quais você tem proficiência, como 
+                                Adagas e Arcos Curtos.
+                                Ao completar um Descanso Longo, você pode alterar 
+                                os tipos de armas que escolheu. Por exemplo, você 
+                                pode trocar para as propriedades de maestria de Cimi
+                                tarras e Espadas Curtas.
+                              </p><br><br>
+                              <div id="collapseFuncao" class="panel-collapse collapse row">
+                                <div class="col-sm-12">
+                                  <h6 style="text-transform: none;">Habilidades</h6>
+                                  <p>
+                                    <b>Aflingir</b> ♦ Espada Curta | Arco Curto<br>
+                                    Se você atingir uma criatura com esta arma e causar 
+                                    dano a ela, você tem Vantagem em sua próxima jogada 
+                                    de ataque contra essa criatura antes do final do seu 
+                                    próximo turno.<br><br>
+                                    <b>Ágil </b> ♦ Adagas<br>
+                                    Ao realizar o ataque adicional da propriedade Leve, 
+                                    você pode fazê-lo como parte da ação Atacar, em vez 
+                                    de uma Ação Bônus. Esse ataque adicional só pode ser 
+                                    realizado uma vez por turno
+                                  </p>
+                                </div>
+                                
+                                
+                              </div>
+                            </div>
+                          </div>
+
+                            <!-- Wordpress Developer -->
+                          <div class="exp">
+                            <div class="media-left"> <span class="sun">Ladina • Nvl 2</span> </div>
+                            <div class="media-body"> 
+                              
+                              <!-- COmpany Logo -->
+                              <div class="company-logo"><b></b></div>
+                              <h6>Ação Ardilosa</h6>
+                              <!-- <p>Infuções Mágicas </p> -->
+                              <p></p>
+                              <p class="margin-top-10"> 
+                                Seu pensamento rápido e agilidade permitem que você 
+se mova e aja rapidamente. No seu turno, você pode 
+executar uma das seguintes ações como uma Ação 
+Bônus: Correr, Desengajar ou Esconder.
+                              </p>
+                            </div>
+                          </div>
+                            <!-- Wordpress Developer -->
+                          <div class="exp">
+                            <div class="media-left"> <span class="sun">Ladina • Nvl 3</span> </div>
+                            <div class="media-body"> 
+                              
+                              <!-- COmpany Logo -->
+                              <div class="company-logo"><b>Trapaceira Arcana</b></div>
+                              <h6>Mira Firme</h6>
+                              <!-- <p>Infuções Mágicas </p> -->
+                              <p></p>
+                              <p class="margin-top-10"> 
+                                Como uma Ação Bônus, você concede a si mesmo 
+Vantagem em sua próxima jogada de ataque no turno 
+atual. Você pode usar esta característica somente se 
+não tiver se movido durante este turno e, após usá-la, 
+seu Deslocamento é 0 até o final do turno atual.
+                              </p>
+                            </div>
+                          </div>
+                          <!-- Wordpress Developer -->
+                            <!-- html5 and css3 Developer -->
+                          <div class="exp">
+                            <div class="media-left"> <span class="sun">Ladina • Nvl 3 </span> </div>
+                            <div class="media-body"> 
+                            
+                                <!-- COmpany Logo -->
+                                <div class="company-logo"> <b>Trapaceira Arcana</b></div>
+                                <h6>Conjuração</h6>
+                                <!-- <p>CM Comercio e Serviços Digitais</p> -->
+                                <p class="margin-top-10"> 
+                                  Tem 3 Feitiços Preparados 3
+                                </p>
+                              
+                            </div>
+                          </div>
+                            <!-- Wordpress Developer -->
+                            <!-- Wordpress Developer -->
+                          <!-- Wordpress Developer -->
+                           <div class="exp">
+                            <div class="media-left"> <span class="sun">Ladina • Nvl 3<br></span> </div>
+                            <div class="media-body"> 
+                              
+                              <!-- COmpany Logo -->
+                              <div class="company-logo"><b>Trapaceira Arcana</b></div>
+                              <h6> Mãos Mágicas Ligeiras</h6>
+                              <!-- <p>Infuções Mágicas </p> -->
+                              <p></p>
+                              <p class="margin-top-10"> 
+                               Ao conjurar Mãos Mágicas, você pode conjurá-la 
+como uma Ação Bônus e pode tornar a mão espectral 
+Invisível. Você pode controlar a mão como uma Ação 
+Bônus e, através dela, pode realizar testes de Destreza 
+(Prestidigitação).
+                              </p>
+                            </div>
+                          </div>
+                            <!-- Wordpress Developer -->
+                        </div>
+                      </div>
+
+                    </section>
+                  </div>
+                </div> 
+
+                  <!-- Magias --> 
+                <div role="tabpane2" class="tab-pane fade in" id="magias">
+                  <div class="inside-sec"> 
+                    <!-- BIO AND SKILLS -->
+                    <h5 class="tittle">Magias</h5>
+                  
+                    <div class="exp padding-20 padding-10">
+                      <div class="media-body" >
+                        
+                        <h6 ><a  data-toggle="collapse" data-parent="#accordion" href="#collapseChave" class="collapsed"> <span style=" text-transform: none;">Ver a regra dos Espaços de Magia</span></a></h6>
+                        <div class="media-left"><p><span class="sun" style="width: 205px;">Conjuração - 1º ciclo 3 espaços</span></p></div><br>
+                         <table style="margin:auto;">
+                            <thead>
+                              <tr>
+                              <th>Ciclos de Magia</th>
+                              <th>Espaços de Magia</th>
+                              <th>Pontos Restantes</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr class="linha-magia" data-max="10">
+                              <td>1º</td>
+                              <td>
+                              <input type="checkbox" class="magia" id="magia1" data-cost="5">
+                              <input type="checkbox" class="magia" id="magia2" data-cost="5">
+                              <input type="checkbox" class="magia" id="magia3" data-cost="5">
+                              <!-- <input type="checkbox" class="magia" id="magia4" data-cost="2">
+                              <input type="checkbox" class="magia" id="magia5" data-cost="2"> -->
+                              </td>
+                              <td class="restante">10</td>
+                              </tr>
+
+                              <!-- <tr class="linha-magia" data-max="9">
+                              <td>2º</td>
+                              <td>
+                              <input type="checkbox" class="magia" id="magia6" data-cost="3">
+                              <input type="checkbox" class="magia" id="magia7" data-cost="3">
+                              <input type="checkbox" class="magia" id="magia8" data-cost="3">
+                              </td>
+                              <td class="restante">9</td>
+                              </tr> -->
+
+                              <!-- <tr class="linha-magia" data-max="8">
+                              <td>3º</td>
+                              <td>
+                              <input type="checkbox" class="magia" data-cost="8">
+                              </td>
+                              <td class="restante">8</td>
+                              </tr> -->
+
+                            </tbody>
+                          </table>
+                          <br><hr><br>
+                        <section id="collapseChave" class="panel-collapse collapse">
+                          <p  class="panel-collapse ">
+                            Para conjurar uma magia do 1º, 2º ou do 3º ciclo é necessário entender sobre os <b> Espaços de Magia.</b> Considere Ciclo de Magia o nível de poder mágico que seu personagem alcançou, ou seja, o máximo do conhecimento arcano adiquirido. Quanto maior o Ciclo de Mágia que você conhece, mais forte e experiênte. No nível 6 você conhece magias dos seguintes ciclos:<br><br>
+                          </p>
+                          <div class="panel-collapse ">
+                            <div class="col-sm-4">
+                              <p><i class="fa fa-magic"></i>São <b>10 pontos</b> dentro do espaço do <b> 1º Ciclo.</b> Para conjurar as magias desse ciclo você gasta <b>5 por magia</b></p>
+                            </div>
+                            <div class="col-sm-4">
+                              <p><i class="fa fa-magic"></i>São <b>9 pontos</b> dentro do espaço do <b> 2º Ciclo.</b> Para conjurar as magias desse ciclo você gasta <b>3 por magia</b></p><br>
+                            </div>
+                            <div class="col-sm-4">
+                              <p><i class="fa fa-magic"></i>São <b>8 pontos</b> dentro do espaço do<b> 3º Ciclo</b> Para conjurar as magias desse ciclo você gasta <b>4 por magia</b></p><br>
+                            </div> 
+                          </div>
+                          <p  class="panel-collapse ">
+                            Em todas as magias e habilidades que existir o fator <b>componentes</b> significa que sua magia tem limites para ser conjurada, se não corresponder aos componetes a magia não será executada.<br><br>
+                          </p>
+                          <div class="panel-collapse ">
+                            <div class="col-sm-4">
+                              <p><i class="fa fa-magic"></i> <b>V - Verbal</b><br> <i style="font-size: 10px;">A magia exige que você fale as palavras mágicas para conjurá-la. <br>• Pode ser um encantamento. <br>• Se você não puder falar, não consegue conjurar.</i></p>
+                            </div>
+                            <div class="col-sm-4">
+                              <p><i class="fa fa-magic"></i> <b>S — Somático</b><br> <i style="font-size: 10px;">A magia exige fazer gestos com as mãos para conjurá-la. <br>• Sinais arcanos<br> • Mãos presas impedem de conjurar</i></p><br>
+                            </div>
+                            <div class="col-sm-4">
+                              <p><i class="fa fa-magic"></i> <b>M — Material</b><br> <i style="font-size: 10px;">A magia exige que tenha um objeto ou artefato físico para conjurá-la <br>• Bolsa de componentes<br> • Foco Arcano</i></p><br>
+                            </div>
+                          </div>
+                        </section>
+                      
+                      </div>
+                    </div>
+                    <!-- magias -->
+                     <div class="inside-sec" > 
+                        <!-- BIO AND SKILLS -->
+                          <section class="portfolio padding-top-20 padding-bottom-50 accordion" id="accordion"> 
+                            <!-- Work Filter -->
+                            <ul class="tabs portfolio-filter text-center margin-bottom-30">
+                              <li class="filter" data-filter="all"><i class="icon-book-open"></i></li>
+                              <li class="filter" data-filter=".truques">Truques</li>
+                              <li class="filter" data-filter=".ciclo-um">1º ciclo</li>
+                              <!-- <li class="filter" data-filter=".ciclo-dois">2º ciclo</li> -->
+                              <!-- <li class="filter" data-filter=".ciclo-tres">3º ciclo </li> -->
+                            </ul>
+                            
+                            <!-- PORTFOLIO ITEMS -->
+                            <div id="Container" class="item-space row col-3"> 
+                              
+                              <!-- truques -->
+                              <article class="portfolio-item mix truques">
+                                <h6 class="no-margin" style="font-size: 12px; text-transform: none;"><a  data-toggle="collapse" data-parent="#accordion" href="#collapseMaoMagica" class="collapsed">Mão Mágica</a></h6>
+                                <span style="font-size: 10px;"><b>Tempo de Conjuração:</b> Ação • <b>Alcance:</b> 9m • <b>Componentes:</b> V,S • <b>Duração:</b> 1 minuto</span>
+                                <div id="collapseMaoMagica" class="panel-collapse collapse row">
+                                <div class="padding-15" style="text-align: justify;"> 
+                                  <p style="font-size: 10px;">
+                                    <span style="font-size: 8px;">Componentes: S, M</span><br>
+                                    Uma mão espectral flutuante aparece em um ponto 
+                                    que você escolher no alcance da magia. A mão perma
+                                    nece pela duração. A mão desaparece se estiver a mais 
+                                    de 9 metros de você ou se você conjurar esta magia 
+                                    novamente.<br>
+                                    Ao conjurar a magia, você pode usar a mão para ma
+                                    nipular um objeto, abrir uma porta ou um recipiente 
+                                    destrancado, guardar ou recolher itens de recipientes 
+                                    abertos, ou despejar o conteúdo de um frasco.
+                                    Como uma ação Usar Magia em seus próximos 
+                                    turnos, você pode controlar a mão novamente. Como 
+                                    parte dessa ação, você pode mover a mão até 9 metros.
+                                    A mão não pode atacar, ativar itens mágicos ou car
+                                    regar mais de 5 quilos.
+                                  </p>
+                                </div>                                
+                              </div>                                  
+                              </article>
+                              
+                              
+                              <!-- truques -->
+                              <article class="portfolio-item mix truques">
+                                <h6 class="no-margin" style="font-size: 12px; text-transform: none;"><a  data-toggle="collapse" data-parent="#accordion" href="#collapseIlusaoMenor" class="collapsed">Ilusão Menor</a></h6>
+                                <span style="font-size: 10px;"><b>Ação para Conjurar:</b> Ação Bônus • <b>Duração:</b> Concentração , até 1 hora</span>
+                                <div id="collapseIlusaoMenor" class="panel-collapse collapse row">
+                                <div class="padding-15" style="text-align: justify;"> 
+                                  <p style="font-size: 10px;">
+                                    <span style="font-size: 8px;">Inimigo Predileto - 3 usos</span><br>
+                                    Você marca magicamente uma criatura que você possa ver dentro do alcance como sua presa. Até o término da magia, você causa 1d6 de dano de Força extra ao alvo sempre que o acertar em uma jogada de ataque. Você também tem vantagem em qualquer teste de Sabedoria ( Percepção ou Sobrevivência ) que fizer para encontrá-lo.
+                                    Se o alvo ficar com 0 Pontos de Vida antes do término desta magia, você pode usar uma Ação Bônus para mover a marca para uma nova criatura que você possa ver dentro do alcance.
+                                  </p>
+                                </div>                                
+                              </div>                                  
+                              </article>
+                              
+                              <!-- truques -->
+                               <article class="portfolio-item mix truques">
+                                  <h6 class="no-margin" style="font-size: 12px; text-transform: none;"><a  data-toggle="collapse" data-parent="#accordion" href="#collapseTalhoMental" class="collapsed">Talho Mental</a></h6>
+                                  <span style="font-size: 10px;"><b>Tempo de conjuração:</b> Ação Bônus • <b>Duração:</b> Concentração, até 1 minuto</span>
+                                  <div id="collapseTalhoMental" class="panel-collapse collapse row">
+                                    <div class="padding-15" style="text-align: justify;"> 
+                                      <p style="font-size: 10px;">
+                                        <span style="font-size: 8px;">Presente de Enoahim</span><br>
+                                        Enquanto a magia estiver ativa, seus ataques com armas causam <b>1d4 de dano Radiante extra ao acertar.</b>
+                                      </p>
+                                    </div>                                
+                                </div>  
+                              </article>
+                              <!-- truques -->
+                              <article class="portfolio-item mix ciclo-um">
+                                  <h6 class="no-margin" style="font-size: 12px; text-transform: none;"><a  data-toggle="collapse" data-parent="#accordion" href="#collapseDisfarce" class="collapsed">Disfarçar-se</a></h6>
+                                  <span style="font-size: 10px;"><b>Tempo de Conjuração:</b> Ação • <b>Alcance:</b> Pessoal • <b>Componentes:</b> V, S • <b>Duração:</b> 1 hora</span>
+                                  <div id="collapseDisfarce" class="panel-collapse collapse row">
+                                    <div class="padding-15" style="text-align: justify;"> 
+                                      <p style="font-size: 10px;">
+                                        Você faz com que você mesmo — incluindo suas roupas, 
+                                        armaduras, armas e outros pertences — pareça diferen
+                                        te até que a magia termine. Você pode parecer 30 cen
+                                        tímetros mais baixo ou mais alto e pode parecer mais 
+                                        pesado ou mais leve. Você deve adotar uma forma que 
+                                        tenha a mesma disposição básica de membros que você. 
+                                        Caso contrário, a extensão da ilusão depende de você.
+                                        <br>
+                                        As mudanças causadas por esta magia falham em 
+                                        uma inspeção física. Por exemplo, se você usar esta 
+                                        magia para adicionar um chapéu ao seu traje, objetos 
+                                        passarão através do chapéu, e qualquer um que o tocar 
+                                        não sentirá nada.
+                                        <br>
+                                        Para descobrir se você está disfarçado, uma criatura 
+                                        deve executar a ação Analisar para inspecionar sua 
+                                        aparência e ser bem-sucedido em um teste de Inteligên
+                                        cia (Investigação) contra a CD para evitar sua magia.
+                                      </p>
+                                    </div>                                
+                                  </div>  
+                              </article>
+                              <!-- truques -->
+                              <article class="portfolio-item mix ciclo-um">
+                                  <h6 class="no-margin" style="font-size: 12px; text-transform: none;"><a  data-toggle="collapse" data-parent="#accordion" href="#collapseEscudoArcano" class="collapsed">Escudo Arcano</a></h6>
+                                  <span style="font-size: 10px;"><b>Tempo de conjuração:</b>  Reação • <b>Duração:</b> 1 rodada • <b>Componentes:</b> V,S </span>
+                                  <div id="collapseEscudoArcano" class="panel-collapse collapse row">
+                                    <div class="padding-15" style="text-align: justify;"> 
+                                      <p style="font-size: 10px;">
+                                        <span style="font-size: 8px;">
+                                          <b>Alcance:</b> Pessoal 
+                                          <br>
+                                          <b>Reação:</b> Você executa quando é atingido por uma jogada de ataque ou é alvo da magia. Ex: Mísseis Mágicos <br>
+                                        </span>
+                                        Você toca uma criatura. A Velocidade do alvo aumenta em 3 metros até o término da magia. Usando um Espaço de Magia de Nível Superior. Você pode escolher uma criatura adicional como alvo para cada nível de espaço de magia acima de 1.
+                                      </p>
+                                    </div>                                
+                                  </div>  
+                                </article>
+                              <!-- truques -->
+                              <article class="portfolio-item mix ciclo-um">
+                                <h6 class="no-margin" style="font-size: 12px; text-transform: none;"><a  data-toggle="collapse" data-parent="#accordion" href="#collapseNevoaObscurecente" class="collapsed"> Névoa Obscurecente</a></h6>
+                                <span style="font-size: 10px;"><b>Tempo de conjuração:</b> Ação  • <b>Alcance:</b> 36m • <b>Componentes:</b> V, S •  <b>Concentração</b> até 1 hora</span>
+                                <div id="collapseNevoaObscurecente" class="panel-collapse collapse row">
+                                  <div class="padding-15" style="text-align: justify;"> 
+                                    <p style="font-size: 10px;">
+                                      Você cria uma Esfera de névoa de 6 metros de raio 
+                                      centrada em um ponto no alcance da magia. A Esfera é 
+                                      Totalmente Obscurecida. Ela permanece pela duração 
+                                      da magia ou até que um vento forte (como um criado 
+                                      por Lufada de Vento) a disperse.<br>
+                                      Usando um Espaço de Magia de Círculo Superior. O 
+                                      raio da névoa aumenta em 6 metros para cada círculo 
+                                      de espaço de magia acima de 1.
+                                    </p>
+                                    </div>                                
+                                </div>  
+                              </article>
+                             
+                              
+                              
+                              
+                              
+                            </div>
+                          </section>
+                     </div>
+                  </div>
+                  
+                  
+                  
+                  
+                </div>
+                
+               <!-- Equipamentos -->
+                <div role="tabpane2" class="tab-pane fade in" id="carregando">
+                  <div class="inside-sec"> 
+                    <!-- BIO AND SKILLS -->
+                    <h5 class="tittle">Todos os Itens e Equipamentos</h5>
+                  
+                    <div class="panel-group accordion gray-bg padding-20 padding-top-50 padding-bottom-50 accordion-style-2 " id="accordion-1"> 
+
+                        <!-- Accoding 1 -->
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2-1">Equipamentos de Combate </a> </h4>
+                        </div>
+                        <div id="collapse-2-1" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <div class="row">
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="equipamentos" contenteditable="true"> 
+                                <b>•  ARMADURA E ARMAS</b><br>
+                                  <b>
+                                    - Armadura de couro .......... (11 + mod de DES)<br>
+                                    - Espada curta ............... (1d6 Perfurante • Acuidade, Leve • <b>Meatria Aflingir</b>)<br>
+                                    - Arco curto ................. (1d6 <b>Maestria Aflingir</b>) <br>
+                                    - Aljava com cerca de 20 flechas <br>
+                                    - 2 Adagas de caça (presente do tio) .. (1d4 Perfurante • Acuidade, Arremesso • <b>Meastria Ágil</b>)<br>
+                                    - Ferramentas de ladrão (abrir fechaduras, desarmar armadilhas) CD 15<br>
+                                    - Kit de assaltante (caixa pra fogo, cantil, corda, esfera de metal, lanterna coberta, 7 potes de óleo, pé de cabra, 5 dias de ração, sino e 10 velas)
+                                  </b>
+                                
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Accoding 2 -->
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2-2"  class="collapsed"> Recompesas da Campanha</a> </h4>
+                        </div>
+                        <div id="collapse-2-2" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row">
+                              
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="recompensas" contenteditable="true"> 
+                                 <b>Ferramentas:<br>
+                                    - Corda de cânhamo (15 metros) <br>
+                                    - Gancho <br>
+                                    - Pedra de amolar <br> 
+                                    - Pederneira <br>
+                                    - Panela pequena <br>
+                                    - Cantil <br>
+                                  </b>
+                                  <br>
+                                 <b>Ferramentas:<br>
+                                    - 8 PO<br>
+                                    - Livro de anotações (não sei escrever direito, então tem mais desenhos do que escrita)<br>
+                                    - 6 pedras mágicas que são um mistério, às vezes juntas, elas vibram aquecem, brilham<br>
+                                    - Minhas tralhas:<br>
+                                      1.Uma pena colorida.<br>
+                                      2.Uma colher de prata torta.<br>
+                                      3.Uma chave enferrujada.<br>
+                                      4.Um dado sem o número seis.<br>
+                                      5.Moedas antigas.<br>
+                                      6.Botões.<br>
+                                      7.Cristais.<br>
+                                      8.Pulseiras.<br>
+                                      9.Pequenos sinos.<br>
+                                      10.Pedras diferentes. <br>
+                                  </b>
+                                  <br>
+                               
+                                <br></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Accoding 3 -->
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2-3" class="collapsed"> Dinheiro • Vestes • Comidas</a> </h4>
+                        </div>
+                        <div id="collapse-2-3" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row">
+                              <div class="col-md-12" style="padding-left: 30px; padding-right: 30px;" id="dinheiro" contenteditable="true"> 
+                                <b>
+                                  Dinheiro<br>
+                                  - P.O: 8<br>
+                                </b>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  
+                </div>
+                                
+                <!-- Anotações -->
+                <div role="tabpanel" class="tab-pane fade col-md-12" id="anotacoes">
+                  <div class="inside-sec blog"> 
+                    <!-- BIO AND SKILLS -->
+                    <h5 class="tittle">História</h5>
+                    
+                    <!-- Blog -->
+                    <article class="blog-post width-100 padding-25">
+                      <!-- BLOG DETAIL -->
+                     
+                      <h5 class="margin-top-30 margin-bottom-0">História: Sussurro, A Tabaxi Forasteira</h5>
+                      <p>
+                         Meu nome pouco importa para quem não faz parte da minha tribo. Entre os meus, os nomes carregam histórias, não apenas sons. Mas, para o resto do mundo, basta me chamar de Sussurro da Brisa.
+                          <br>Nasci em uma pequena tribo de tabaxis que vivia escondida no coração de uma grande floresta. Nossa aldeia ficava relativamente próxima de uma cidade, mas ninguém jamais descobriu nossa localização. Éramos mestres da camuflagem e da discrição, e manter nossa existência em segredo era uma das regras mais importantes da tribo.
+                          Vivíamos completamente isolados das outras raças. Não comerciávamos, não recebíamos visitantes e não permitíamos qualquer contato com o mundo exterior. Tudo o que precisávamos vinha da própria floresta.
+                          Para que isso fosse possível, cada família possuía uma função. Alguns cultivavam plantas, outros confeccionavam ferramentas, outros cuidavam dos doentes. Meu tio e eu éramos responsáveis pela caça e pela pesca.
+                          Foi ele quem me criou.
+                          Nunca conheci meus pais, mas isso nunca fez diferença. Meu tio foi tudo para mim. Paciente, sábio e extremamente carinhoso, ensinou-me a rastrear animais, montar armadilhas, pescar em rios caudalosos e sobreviver em qualquer lugar da floresta.
+                          <br><br>Nossa rotina era simples. A cada poucos dias caminhávamos por cerca de três dias até uma região rica em peixes e caça. Acampávamos por algumas noites, reuníamos alimento suficiente para a tribo e então voltávamos.
+                          Eu adorava essas viagens.
+                          Não apenas pela caça.
+                          Mas porque era nelas que eu podia olhar além da floresta.
+                          <br><br>Desde pequena eu era absurdamente curiosa.
+                          Enquanto meu tio pescava ou preparava o acampamento, eu inventava desculpas para explorar os arredores. Sempre tomava cuidado para não ser descoberta, mas acabava chegando perto de estradas, fazendas e pequenas cidades.
+                          <br><br>Foi assim que comecei a observar o mundo.
+                          Vi humanos.
+                          Elfos.
+                          Anões.
+                          Orcs.
+                          Halflings.
+                          Cada um parecia viver de uma maneira completamente diferente da minha.
+                          Aquilo me fascinava.
+                          Passei a passar horas escondida sobre telhados, árvores ou atrás de barris apenas ouvindo conversas. Algumas vezes chegava a entrar escondida em tavernas durante a noite, usando capuzes improvisados para esconder minhas orelhas e minha cauda.
+                          Ninguém percebia minha presença.
+                          Eu aprendia apenas observando.
+                          Com o tempo consegui compreender o idioma comum e, ouvindo mercenários, contrabandistas e ladrões conversando discretamente, também aprendi a Linguagem dos Ladrões, mesmo sem jamais ter feito parte de qualquer guilda.
+                          Meu tio era o único que sabia de tudo isso.
+                          Ele nunca contou para ninguém.
+                          Em vez disso, apenas sorria quando eu voltava cheia de perguntas sobre aquele enorme mundo que existia além da floresta.
+                          Às vezes ele dizia:
+                          "Um dia, vá."
+                          E depois completava:
+                          "Não se prenda ao velho como eu. Cuidei bem de você... e você ficou comigo por todo o tempo que pôde."
+                          Eu sempre respondia que ainda não era a hora.
+                          Eu sabia que ele já estava envelhecendo.
+                          Queria permanecer ao seu lado até o fim.
+                          Depois...
+                          Eu partiria.
+                          <br><br>Havia, porém, outro segredo.
+                          Um segredo que apenas meu tio conhecia.
+                          Desde filhote, acontecimentos estranhos me cercavam.
+                          Pedras rolavam alguns centímetros quando eu me concentrava.
+                          Pequenos objetos pareciam deslizar sozinhos.
+                          Galhos se moviam sem vento.
+                          Às vezes um peixe simplesmente nadava até perto de mim, como se tivesse sido atraído por alguma força invisível.
+                          Meu tio nunca soube explicar aquilo.
+                          Dizia apenas:
+                          "Talvez a floresta tenha decidido sussurrar para você."
+                          Eu nunca contei isso para mais ninguém.
+                          Quando estava sozinha, tentava repetir aqueles pequenos feitos.
+                          Depois, ao observar viajantes e magos durante minhas escapadas até as cidades, comecei a copiar seus gestos e movimentos.
+                          Na maioria das vezes...
+                          Nada acontecia.
+                          Mas, de vez em quando...
+                          Funcionava.
+                          Aos poucos, fui aprendendo pequenos truques mágicos que me ajudavam a mover objetos, preparar armadilhas mais eficientes e tornar minhas caçadas muito mais fáceis.
+                          Jamais compreendi completamente como fazia aquilo.
+                          Mas continuei praticando em segredo.
+                          <br><br>Além disso, desenvolvi outro hábito.
+                          Colecionava tralhas.
+                          Qualquer objeto curioso que encontrasse acabava indo para minha mochila.
+                          Uma pena colorida.
+                          Uma colher de prata torta.
+                          Uma chave enferrujada.
+                          Um dado sem o número seis.
+                          Moedas antigas.
+                          Botões.
+                          Cristais.
+                          Pulseiras.
+                          Pequenos sinos.
+                          Pedras diferentes.
+                          Eu nunca jogava nada fora.
+                          Talvez um dia servissem para alguma coisa.
+                          <br><br>Foi durante uma de nossas viagens de caça que tudo mudou.
+                          Estávamos acampados a alguns dias de caminhada da aldeia.
+                          Enquanto explorava os arredores, vi uma luz incomum surgindo entre as árvores.
+                          Aproximei-me silenciosamente.
+                          Escondida no alto de uma árvore, encontrei uma velha mulher realizando um ritual.
+                          Era a primeira vez que via alguém conjurando magia daquela forma.
+                          Ao lado dela havia um goblin muito maior que os demais, claramente um líder.
+                          Poucos goblins estavam reunidos ao redor.
+                          Então ela começou o ritual.
+                          Seis pedras negras estavam dispostas em círculo.
+                          À medida que ela lançava seus feitiços, novos goblins surgiam.
+                          Não pareciam nascer.
+                          Pareciam... cópias.
+                          Versões imperfeitas daqueles que já estavam ali.
+                          Fiquei completamente fascinada.
+                          Minha atenção não estava nos goblins.
+                          Estava nas pedras.
+                          <br><br>Eu precisava descobrir o que eram.
+                          Corri de volta ao acampamento para contar tudo ao meu tio.
+                          Expliquei que queria seguir aquela mulher sem que ela percebesse.
+                          Ele permaneceu em silêncio por alguns instantes.
+                          Depois sorriu.
+                          Um sorriso que nunca esquecerei.
+                          Então disse:
+                          "Você sempre olhou para fora da floresta."
+                          Colocou uma das mãos sobre meu ombro.
+                          "Eu sempre olhei para você."
+                          Respirou fundo antes de concluir:
+                          "Agora finalmente posso olhar para as árvores outra vez."
+                          E então completou:
+                          "Vá descobrir por que o mundo é tão grande."
+                          Abraçamo-nos.
+                          Retirei do pescoço um colar que carregava desde pequena e o entreguei a ele.
+                          Pedi que nunca o perdesse.
+                          Disse que sempre me lembraria dele.
+                          Ele prometeu que esperaria meu retorno.
+                          Peguei minha mochila.
+                          Dentro dela havia meu arco curto, uma aljava cheia de flechas, minha adaga de caça — presente do meu tio —, uma corda, um gancho, pederneira, cantil, panela pequena, ferramentas improvisadas para abrir fechaduras, meu caderno cheio de desenhos e toda a coleção de objetos inúteis que eu insistia em carregar.
+                          Então fui embora.
+                          <br><br>Quando voltei ao local do ritual, fiquei paralisada.
+                          Agora havia dezenas de goblins.
+                          Mais de cinquenta.
+                          O ritual havia terminado.
+                          O líder ordenou:
+                          "Lembrem-se! Peguem a encomenda e retornem o mais rápido possível!"
+                          A velha bruxa começou a marchar.
+                          Os goblins seguiram atrás.
+                          Eu fui atrás deles, escondida entre árvores, telhados e sombras.
+                          Nenhum deles percebeu minha presença.
+                          Depois de algum tempo chegamos a uma cidade.
+                          Foi então que vi outra cena inesperada.
+                          Um guerreiro enorme enfrentava sozinho parte dos goblins.
+                          Parecia um orc...
+                          Mas havia algo diferente nele.
+                          Talvez fosse um meio-orc.
+                          Naquele momento, porém, pouco me importava.
+                          Meu objetivo continuava sendo a bruxa.
+                          <br><br>Enquanto o guerreiro atraía sua atenção, aproveitei para me aproximar silenciosamente.
+                          Consegui roubar uma das pedras.
+                          Mas fui vista.
+                          A bruxa lançou um feitiço contra mim.
+                          Sem escolha, entrei pela primeira vez em um combate de verdade.
+                          Lutei da única maneira que sabia.
+                          Como caçava.
+                          Alternava entre disparos com meu arco e golpes rápidos com minha adaga, usando as árvores, caixas e construções da cidade como cobertura.
+                          Enquanto isso, o meio-orc enfrentava o líder goblin.
+                          Foi uma luta difícil.
+                          Mas juntos conseguimos derrotar os dois.
+                          <br><br>Assim que a bruxa caiu, recolhi rapidamente todas as seis pedras negras.
+                          Também encontrei um velho livro extremamente gasto, com páginas queimadas e escrito em uma língua que eu não compreendia.
+                          Guardei tudo na mochila.
+                          Enquanto eu verificava os objetos, percebi que o meio-orc caminhava até os corpos.
+                          Achei que ele apenas confirmaria que estavam mortos.
+                          Em vez disso...
+                          Arrancou a cabeça do líder goblin.
+                          Depois a da bruxa.
+                          Fiquei horrorizada.
+                          Na minha tribo, um inimigo derrotado não era tratado daquela forma.
+                          Eu não entendia por que alguém faria aquilo.
+                          Quis impedi-lo.
+                          Mas já era tarde.
+                          Logo depois ele caiu de joelhos.
+                          Estava gravemente ferido.
+                          Poucos segundos depois, desmaiou.
+                          Eu poderia simplesmente ir embora.
+                          Mas ele havia me ajudado.
+                          Sem ele, talvez eu tivesse morrido.
+                          Então fiz a única coisa que achei certa.
+                          Arrastei aquele enorme meio-orc para dentro da floresta.
+                          Encontrei um lugar escondido, coberto por raízes e folhas caídas.
+                          Preparei um abrigo improvisado, tratei seus ferimentos da melhor forma que consegui e permaneci de guarda até adormecer.
+                          Meu plano era simples.
+                          Quando amanhecesse...
+                          Nós nos despediríamos.
+                          Eu seguiria meu caminho.
+                          E ele seguiria o dele.
+                          Eu ainda não fazia ideia de que aquela seria apenas a primeira página da maior aventura da minha vida.
+                      </p><br>
+                      
+
+
+                      <h5 class="margin-top-30 margin-bottom-0">Traços de Personalidade</h5>
+                      <p>
+                        <b>CARACTERÍSTICAS</b>
+                        <br>Curiosa:<br>
+                        "Vocês... dormem em camas?"
+                        "Como vocês conseguem saber qual moeda vale mais?"
+                        "Por que alguém pagaria por um peixe? É só pegar."
+                        "Vocês cortam árvores... para fazer casas?"
+                        <br><br>
+                        Não sabe cobre civilização<br>
+                        • Nunca usou dinheiro. <br>
+                        • Não entende por que as pessoas trancam portas. <br>
+                        • Acha estranho pagar por comida. <br>
+                        • Dorme em telhados ou árvores em vez de camas. <br>
+                        • Fica encarando pessoas por tempo demais porque está estudando seus hábitos. <br>
+                        • Faz perguntas completamente inocentes, como: "Por que vocês colocam fogo dentro das casas?" ao ver uma lareira. <br>
+                        <br>
+                        Hábito: Está sempre observando<br>
+                        "Não consigo evitar investigar qualquer coisa que desperte minha curiosidade."<br><br>
+                        Ideal - Conhecimento<br>
+                        "O mundo é grande demais para passar a vida inteira sem conhecê-lo."<br><br>
+                        Defeito<br>
+                        Esse eu acho maravilhoso: "Minha curiosidade é maior que meu bom senso."<br><br>
+                        Lema<br>
+                        Meu tio sempre dizia isso: "Toda trilha existe porque alguém teve coragem de dar o primeiro passo."
+                      </p>
+                      <br><br><br>
+                       <h4 class="font-normal">Viagens e Missões</h4>
+                      <span class="post-bt">Cidade Atual: <span class="text-color-primary"> Eldovar</span></span>
+                      <ul class="post-info">
+                        <li> <i class="fa fa-bookmark-o"></i>Histórias e Anotações Importantes</li>
+                        <li>  </li>
+                      </ul>
+
+                      <div class="row">
+                       <h6 class="margin-top-30 margin-bottom-0">Anotações Importantes</h6>
+                       <p id="anotacao" contenteditable="true">• No atual momento ... </p>
+                     </div>
+                      
+
+                    </article>
+                  </div>
+                </div>
+
+                <!-- Combos -->
+                <div role="tabpanel" class="tab-pane fade col-md-12" id="combos">
+                  <div class="inside-sec blog"> 
+                     <h5 class="tittle">Combinações Poderosas</h5>
+                  
+                    <!-- Pricing Table -->
+                    <article class="pricing padding-20">
+                      <div class="row"> 
+                       
+                        
+                        <!-- Business Plan -->
+                        <div class="col-md-12 margin-bottom-30">
+                          <ul class="pricing-table style-1 hover-up hover-shadow">
+                            <li class="title">Bônus de Ataque Mágico</li>
+                            <li class="bullet-item padding-20" style="text-align: justify;">
+                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapseArmadura" class="collapsed"> <span style=" text-transform: none;">Habilidades Marciais</span></a></h6>
+                              <section class="panel-collapse ">
+                                <p  class="panel-collapse ">
+                                   Sua habilidade marcial lhe permite desferir diversos golpes em um único turno<br><br>
+                                  <b>Ataque Básico</b> - Graças a sua Maestria, você desfere 4 ataques:<br><b>• Cimitarras + Nick (2d6+8)</b> <br> • Talento <b>Combate com 2 Armas (1d6+4)</b> <br>• Ataque <b>extra do nível 5 (1d6+4)</b> <b></b><br>TOTAL DE ATAQUE - <B>4d6+16</B>  <br><br>
+                                  Quando ativa a <b>Marca do Caçador</b> os golpes passam a ser <b>5d6+12</b><br>
+                                </p>
+                              </section>
+                            </li>
+                            <li class="bullet-item padding-20" style="text-align: justify;"> 
+                              <h6><a  data-toggle="collapse" data-parent="#accordion" href="#collapseArmorer" class="collapsed"> <span style=" text-transform: none;">Combos usando as Magias</span></a></h6>
+                              <section id="" class="panel-collapse">
+                                <p  class="panel-collapse">
+                                  Algumas Magias rápidas para causar dano
+                                </p>
+                                <div class="panel-collapse ">
+                                  <div class="col-sm-12">
+                                    <p style="font-size: 10px;"><i class="fa fa-magic"></i><b> Guerreiro Planar:</b>Ação Bônus para conjura a magia • DANO • <b>4d6 + 12 + 1d8</b> </p>
+                                  </div>
+                                  <div class="col-sm-12">
+                                    <p style="font-size: 10px;"><i class="fa fa-magic"></i><b> Absorver Energia:</b> Com reação, você absorver a energia do elemento e atacar, o dano é igual <b>4d8 + 16 (+ 1d6 se o alvo estiver marcado)</b> <br><b>Sugestão:</b> ação bonus para teleportar e atacar com <b>Passo Feérico</b> • DANO • 4d8+12</p>
+                                  </div>
+                                  
+                                </div>
+                              </section>
+                            </li> 
+                            
+                            
+                            <li class="price"></li>
+                            <li class="cta-button"><a class="btn"  href="#.">ACERTO d20 + 8</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- End Content --> 
+  
+  <!-- Footer -->
+  <footer class="footer" style="padding-top: 219px;">
+    <div class="rights">
+      <p>© Copyright Contos de Jezreel. All right reserved.</p>
+    </div>
+  </footer>
+  <!--  End Footer --> 
+
+</div>
+
+<div id="resume" class="tab-mostrar fade in"> 
+  
+ <!-- JavaScripts --> 
+<script src="script.js"></script>
+<script src="../js/vendors/jquery/jquery.min.js"></script> 
+<script src="../js/vendors/bootstrap.min.js"></script> 
+<script src="../js/vendors/owl.carousel.min.js"></script> 
+<script src="../js/vendors/jquery.isotope.min.js"></script> 
+<script src="../js/main.js"></script> 
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> 
+<script src="../js/vendors/map.js"></script>
+
+
+</body>
+</html>
+
 
