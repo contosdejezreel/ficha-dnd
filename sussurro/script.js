@@ -348,33 +348,6 @@ atualizar()
 
 
 
-
-    // // 1. Bloqueia o clique com o botão direito (Menu de Contexto)
-    // document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // // 2. Bloqueia atalhos de teclado comuns para desenvolvedores
-    // document.onkeydown = function(e) {
-    //     // Bloqueia F12
-    //     if(e.keyCode == 123) {
-    //         return false;
-    //     }
-    //     // Bloqueia Ctrl+Shift+I (Inspecionar)
-    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-    //         return false;
-    //     }
-    //     // Bloqueia Ctrl+Shift+C (Selecionar elemento)
-    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-    //         return false;
-    //     }
-    //     // Bloqueia Ctrl+Shift+J (Console)
-    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-    //         return false;
-    //     }
-    //     // Bloqueia Ctrl+U (Exibir código fonte)
-    //     if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-    //         return false;
-    //     }
-    // }
     
 
 function mostrarGameOver(){
