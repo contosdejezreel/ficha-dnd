@@ -144,10 +144,10 @@ barra.style.background = "deepskyblue"
 
 }else{
 
-if(porcentagem > 27){
+if(porcentagem > 68){
 barra.style.background = "green"
 }
-else if(porcentagem > 13){
+else if(porcentagem > 34){
 barra.style.background = "orange"
 }
 else{
@@ -348,6 +348,33 @@ atualizar()
 
 
 
+
+    // // 1. Bloqueia o clique com o botão direito (Menu de Contexto)
+    // document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // // 2. Bloqueia atalhos de teclado comuns para desenvolvedores
+    // document.onkeydown = function(e) {
+    //     // Bloqueia F12
+    //     if(e.keyCode == 123) {
+    //         return false;
+    //     }
+    //     // Bloqueia Ctrl+Shift+I (Inspecionar)
+    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    //         return false;
+    //     }
+    //     // Bloqueia Ctrl+Shift+C (Selecionar elemento)
+    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    //         return false;
+    //     }
+    //     // Bloqueia Ctrl+Shift+J (Console)
+    //     if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    //         return false;
+    //     }
+    //     // Bloqueia Ctrl+U (Exibir código fonte)
+    //     if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    //         return false;
+    //     }
+    // }
     
 
 function mostrarGameOver(){
@@ -372,3 +399,37 @@ tentativasMorte = 0
 atualizarBarra()
 
 }
+
+// flep image
+
+const slider = document.getElementById("slider");
+const slides = slider.querySelector(".slides");
+
+let startX = 0;
+let current = 0;
+let dragging = false;
+
+slider.addEventListener("pointerdown", e=>{
+    startX = e.clientX;
+    dragging = true;
+});
+
+slider.addEventListener("pointerup", e=>{
+
+    if(!dragging) return;
+
+    let distance = e.clientX - startX;
+
+    if(distance < -70){
+        current = 1;
+    }
+
+    if(distance > 70){
+        current = 0;
+    }
+
+    slides.style.transform = `translateX(-${current * 50}%)`;
+
+    dragging = false;
+
+});
