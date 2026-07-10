@@ -1,4 +1,4 @@
-const pvMax = 27
+const pvMax = 36
 
 const campo = document.getElementById("valorPV")
 
@@ -144,6 +144,7 @@ barra.style.background = "deepskyblue"
 
 }else{
 
+
 if(porcentagem > 68){
 barra.style.background = "green"
 }
@@ -153,6 +154,7 @@ barra.style.background = "orange"
 else{
 barra.style.background = "red"
 }
+
 
 }
 
@@ -376,6 +378,8 @@ atualizar()
     //     }
     // }
     
+
+
 
 function mostrarGameOver(){
 
